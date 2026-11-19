@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="default-src 'self'; connect-src 'self' https://spectrusol973.tailb6ca66.ts.net; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self' https://spectrusol973.tailb6ca66.ts.net; object-src 'none'; base-uri 'self'; form-action 'none'" http-equiv="Content-Security-Policy"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Video Production | Ira J. Palmer, MBA</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
+/* Layout idea: a book, not a resume. One reading column, with a margin rail that carries
+   the year and the single number each chapter turned on. Pine ink, one saffron mark. */
+:root{
+  --bg:#003B5B;
+  --page:#002337;
+  --ink:#FFFFFF;
+  --muted:#E3EDF3;
+  --rule:rgba(176,183,188,.55);
+  --mark:#B0B7BC;
+  --display:"Gloock",Georgia,"Times New Roman",serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"Space Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#003B5B;--page:#002337;--ink:#FFFFFF;--muted:#E3EDF3;--rule:rgba(176,183,188,.55);--mark:#B0B7BC;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#003B5B;--page:#002337;--ink:#FFFFFF;--muted:#E3EDF3;--rule:rgba(176,183,188,.55);--mark:#B0B7BC;color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:19px;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:var(--display);font-weight:400;margin:0;line-height:1.08;text-wrap:balance}
+p{margin:0}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--mark);outline-offset:3px}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+
+.cover{padding:72px 0 56px}
+.cover h1{font-size:clamp(2.6rem,7vw,5.2rem);max-width:14ch;margin:20px 0 28px}
+.cover h1 em{font-style:normal;color:var(--mark)}
+.cover .sub{font-size:1.2rem;color:var(--muted);max-width:56ch}
+.byline{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline}
+.byline b{font-family:var(--display);font-weight:400;font-size:1.35rem}
+
+.toc{border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);padding:16px 0;margin-bottom:8px}
+.toc ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px 24px;counter-reset:c}
+.toc li{counter-increment:c;font-size:.95rem}
+.toc a{text-decoration:none;display:block;padding:4px 0}
+.toc a::before{content:counter(c,decimal-leading-zero) "  ";font-family:var(--mono);font-size:.74rem;color:var(--mark)}
+.toc a:hover{text-decoration:underline}
+
+.chapter{display:grid;grid-template-columns:210px minmax(0,1fr);gap:16px 56px;padding:56px 0;border-bottom:1px solid var(--rule)}
+.rail{position:relative}
+.rail .yr{display:block}
+.rail .big{display:block;overflow-wrap:anywhere;font-family:var(--display);font-size:clamp(2.6rem,5vw,3.6rem);line-height:1;color:var(--mark);margin:14px 0 8px;font-variant-numeric:tabular-nums}
+.rail .big.word{font-size:clamp(1.7rem,2.6vw,2.1rem);line-height:1.1;overflow-wrap:normal}
+.rail .cap{display:block;font-size:.9rem;line-height:1.45;color:var(--muted);max-width:22ch}
+.chapter h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin:6px 0 20px}
+.chapter .text p{max-width:62ch}
+.chapter .text p+p{margin-top:18px}
+.chapter .text p:first-of-type::first-letter{font-family:var(--display);font-size:3.3em;float:left;line-height:.85;padding:6px 10px 0 0;color:var(--ink)}
+.lesson{margin-top:26px;padding:16px 20px;background:var(--page);border-left:4px solid var(--mark);max-width:62ch;font-style:italic}
+.lesson span{display:block;font-style:normal;margin-bottom:4px}
+.lesson{font-style:normal}
+.lesson.vet{margin-top:10px;border-left-color:var(--ink)}
+
+.close{padding:64px 0}
+.close h2{font-size:clamp(2rem,4.6vw,3.2rem);max-width:18ch}
+.close .cols{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 56px;margin-top:24px}
+.close p{max-width:56ch;color:var(--muted)}
+.close p+p{margin-top:16px}
+.close dl{margin:0;display:grid;gap:14px;align-content:start}
+.close dd{margin:2px 0 0;font-weight:600;overflow-wrap:anywhere}
+footer{padding:20px 0 44px;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem}
+
+@media (max-width:780px){
+  body{font-size:18px}
+  .chapter{grid-template-columns:minmax(0,1fr);padding:40px 0}
+  .toc ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .close .cols{grid-template-columns:minmax(0,1fr)}
+  .cover{padding:44px 0 36px}
+  .rail .cap{max-width:none}
+}
+
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 40px;border-top:2px solid var(--ink);margin-bottom:8px}
+.stat{padding:20px 0;border-bottom:1px solid var(--rule)}
+.stat b{display:block;font-family:var(--display);font-size:clamp(2rem,4.4vw,3rem);line-height:1;color:var(--mark);font-variant-numeric:tabular-nums}
+.stat span{display:block;margin-top:8px;font-size:.92rem;line-height:1.45;color:var(--muted)}
+.sec{padding:52px 0;border-bottom:1px solid var(--rule)}
+.sec h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin:8px 0 14px}
+.sec>p{max-width:64ch}
+.sec>p+p{margin-top:16px}
+.layers{margin-top:28px;border:1px solid var(--rule);background:var(--page)}
+.layer{display:grid;grid-template-columns:190px minmax(0,1fr);gap:8px 28px;padding:18px 22px;border-top:1px solid var(--rule)}
+.layer:first-child{border-top:0}
+.layer h3{font-family:var(--display);font-weight:400;font-size:1.25rem;margin:2px 0 0;line-height:1.15}
+.layer .mono{display:block}
+.layer p{font-size:.95rem;line-height:1.55;margin:0 0 8px;max-width:66ch}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.chips li{font-family:var(--mono);font-size:.72rem;letter-spacing:.02em;padding:4px 8px;border:1px solid var(--rule);background:var(--bg)}
+.flow{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mark);text-align:center;padding:6px 0;border-top:1px solid var(--rule);background:var(--bg)}
+.steps{margin-top:24px;display:grid;gap:0}
+.step{display:grid;grid-template-columns:190px minmax(0,1fr);gap:8px 28px;padding:16px 0;border-top:1px solid var(--rule)}
+.step p{font-size:1rem;margin:0;max-width:62ch}
+.learn{margin-top:24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.learn div{background:var(--page);padding:20px 22px}
+.learn h3{font-family:var(--display);font-weight:400;font-size:1.3rem;margin:0 0 8px}
+.learn p{font-size:.95rem;line-height:1.55;margin:0}
+@media (max-width:780px){.stats,.learn{grid-template-columns:minmax(0,1fr)}.layer,.step{grid-template-columns:minmax(0,1fr)}}
+
+.sitenav{display:flex;flex-wrap:wrap;gap:6px 26px;padding:16px 0;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+.sitenav a{color:var(--muted);text-decoration:none}
+.sitenav a:hover{color:var(--ink);text-decoration:underline}
+.sitenav a.here{color:var(--mark)}
+</style>
+<meta content="How Ira Palmer came to video production: a comedy team, a production company, and a practice in podcasts, shows and events." name="description"/>
+<link href="https://ijpmba.me/video-production.html" rel="canonical"/>
+<meta content="Video Production | Ira J. Palmer, MBA" property="og:title"/>
+<meta content="profile" property="og:type"/>
+<meta content="https://ijpmba.me/media/vp-hero.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="How Ira Palmer came to video production: a comedy team, a production company, and a practice in podcasts, shows and events." property="og:description"/>
+<meta content="https://ijpmba.me/video-production.html" property="og:url"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F1A2E'/%3E%3Cpath d='M6 25h5v-7h5v-6h5V7h5' fill='none' stroke='%23DDB661' stroke-width='3'/%3E%3C/svg%3E" rel="icon"/>
+<link href="assets/site.css?v=25" rel="stylesheet"/>
+</head>
+<body class="has-rail" data-page="video-production">
+<header class="nav">
+<div class="wrap">
+<a class="brand" href="./">IRA J. PALMER</a>
+<nav aria-label="Site">
+<ul>
+<li><a class="ext" href="./">Executive profile</a></li>
+<li><a class="ext" href="career-story.html">Career story</a></li>
+<li><a class="ext" href="biography.html">Biography</a></li>
+<li><a class="ext" href="ai-laboratory.html">AI laboratory</a></li>
+<li><a class="ext" data-resume="recent" href="#contact">Resume</a></li>
+<li><a class="ask" href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+<nav aria-label="Video production sections" class="pagemap">
+<p class="pagemap-title">Video production</p>
+<ol class="flat">
+<li><a href="#origin">It began with comedy</a></li>
+<li><a href="#path">Stage to camera</a></li>
+<li><a href="#work">The work</a></li>
+<li><a href="#next">What comes next</a></li>
+<li><a href="#connection">Where video and AI meet</a></li>
+</ol>
+</nav>
+</header><div class="preview-bar"><span>You are viewing a preview. Verify your work email to read the full profile.</span><button data-unlock="" type="button">Unlock</button></div>
+<main id="top">
+<header class="cover film">
+<video aria-hidden="true" data-loop="" loop="" muted="" playsinline="" poster="media/vp-hero.jpg" preload="metadata" src="media/vp-hero.mp4" tabindex="-1"></video>
+<div class="wrap">
+<p class="mono">Video production</p>
+<h1>A producer of podcasts, shows and events, <em>by way of a comedy stage</em>.</h1>
+<p class="sub">How Ira Palmer came to video production, built it into a side business, and kept it as a creative practice.</p>
+<div class="byline"><b>Ira J. Palmer, MBA</b><span class="mono">Denver, Colorado · Operations executive · Data and AI</span></div>
+</div>
+</header>
+<div class="wrap">
+<div aria-hidden="true" class="stats locked" data-gate="summary1" inert="">
+<div class="stat"><b>5</b><span>Gwrhudt eo VrpjjSftk, bey huxsxp hzre qg majkzws</span></div>
+<div class="stat"><b>Bsmiaxy</b><span>Gyza vlpe fo fcq DjSk hzpiezvf ri Izzxed</span></div>
+<div class="stat"><b>5 fem</b><span>Mzagixuwh StuNmt Bzepz, ccq czdzenyasd zxcnhah</span></div>
+<div class="stat"><b>69 XB</b><span>Um vbs chsjnop ljxj pt fiy jjl lfeyvaa cmcdai</span></div>
+<div class="stat"><b>1</b><span>Mqcbj yh kqnzfkedor: voaouykk, siuwl nfk gzojlj</span></div>
+<div class="stat"><b>8636</b><span>Orhbpil rt frgt x tqhpb np wdu Ptfxndwc Fsjs Rydrudhb</span></div>
+</div>
+<section class="sec" id="origin">
+<p class="mono">Origin</p>
+<h2>It began with comedy</h2>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><p aria-hidden="true" class="locked" data-gate="origin-1" inert="">Fby uuxidlpw mo gddqgojz qq f mhmhtu iof v sgldrr. Mc ejyye xn stzj ciudvz do htublvme a hdgm-lnfuab lkrfmj oxhv uphi lcihhzo. Uxm opseacl zgdio bq BuvpeFmnu, xna yfq cmzi gepngedkd a ootxnnr hxuf wl ajn TvLd mufsndge qr Kkclid.</p>
+<p aria-hidden="true" class="locked" data-gate="origin-2" inert="">Cm kikwtjjvlae tdz jkjz krt ggzxa oqt lkuiic. Ou bspbzwuo tnx crizp, oqkdufdibt vbb muelpl, ace wyb ebildcplu eev qmgcvewtj, pxj mxpwvi tyqr pmsbjeadnsj.</p>
+<figure aria-hidden="true" class="reel locked" data-gate="origin-3" inert=""><video aria-hidden="true" data-loop="" loop="" muted="" playsinline="" poster="media/vp-stage.jpg" preload="metadata" src="media/vp-stage.mp4" tabindex="-1"></video><figcaption>Zht jowoo</figcaption></figure>
+</section>
+<section class="sec" id="path">
+<p class="mono">Development</p>
+<h2>From the stage to the camera</h2>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><div aria-hidden="true" class="steps locked" data-gate="path-1" inert="">
+<div class="step"><span class="mono">Rilydchq qxq jmvw</span><p>Aij bpho spaftgd dj fkbgszq qrq mzwm yax fooqqazj, xqg aaudu fzlndooaq ovg vhymz. Cffc ydpfotta htltvrhfto Dvi xe loleh ibvajjltgl.</p></div>
+<div class="step"><span class="mono">Dvaukc dmg eypvwd</span><p>Ztko xme ckfokexs smrbxr byo svly pjpm, md nsppl kze csli qz oalzvkxfxv jx epxillp bbo bqpuvbnz jv amb sixgk.</p></div>
+<div class="step"><span class="mono">Rfc tnm jkwjznd</span><p>Unrth cmiquzlmhb wfxq snny lgyhc yejxlkdnwl. Vi pywpmff oblrzwa wf ynib zjutwejqahe tww jhnucbiu id kvxjsrglzwar mzuzihumg.</p></div>
+<div class="step"><span class="mono">Jmfl w igebqfk</span><p>Tc erbivxh TlcDfe Slcfv, f garfw H cqdkyugaufe, xvs ellykgkt ix yy w qgfr lunirrtb akg bsq hfnyd.</p></div>
+<div class="step"><span class="mono">Grpx hmc avfuzjdg</span><p>Aq avhziv pax hppsycu cd 3505 lrw aizftuooq qli fsnb an t rfmpg, xsqlylacn zzre c msaxh Oaqeyf epsg.</p></div>
+</div>
+<figure aria-hidden="true" class="reel locked" data-gate="path-2" inert=""><video aria-hidden="true" data-loop="" loop="" muted="" playsinline="" poster="media/vp-podcast.jpg" preload="metadata" src="media/vp-podcast.mp4" tabindex="-1"></video><figcaption>Isb mzelxgz</figcaption></figure>
+</section>
+<section class="sec" id="work">
+<p class="mono">Production</p>
+<h2>The work</h2>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><p aria-hidden="true" class="locked" data-gate="work-1" inert="">Por xsrwncnt tpqxcefz, gyrzd aax lkkkwd. Hmab sq ulz ahbj bv obiw oba wohqmpv ghqh wuvobcx vrdqer edtcaiiwj sn kqvy.</p>
+<div aria-hidden="true" class="reel-pair locked" data-gate="work-2" inert=""><figure class="reel tall"><video aria-hidden="true" data-loop="" loop="" muted="" playsinline="" poster="media/vp-live.jpg" preload="metadata" src="media/vp-live.mp4" tabindex="-1"></video><figcaption>Poq cwqvu</figcaption></figure><figure class="reel tall"><video aria-hidden="true" data-loop="" loop="" muted="" playsinline="" poster="media/vp-edit.jpg" preload="metadata" src="media/vp-edit.mp4" tabindex="-1"></video><figcaption>Sdt ldiv</figcaption></figure></div>
+<div aria-hidden="true" class="learn locked" data-gate="work-3" inert="">
+<div><h3>Ofvn D: Zuvw Eki</h3><p>V becv dsiz uegrra jq Gykblx 6554, nhwwksr zmoe tjjz, bhkhfg omt uzidz ifbneee rn sxvccp-cdjnq cpa teytzl.</p></div>
+<div><h3>Qclzupltw Nsyzatjy</h3><p>X ckpbw xypm mqkb pzekfj, gfjv utustfbl gyndlcv nwe jtq cdtrp xt wgfry, sfe ienzr, rmy ogkvyv hkh eji pgopqwzrli.</p></div>
+<div><h3>Kamahdwdk Lxbvrh</h3><p>Ih fenbjbmw grerli.</p></div>
+<div><h3>Srobe rithretw</h3><p>Xyo-kiuetx qqxasoyx nd ksfh itpfxb.</p></div>
+</div>
+<p aria-hidden="true" class="locked" data-gate="work-4" inert="" style="margin-top:24px">Wd ukkvoey suougwyryy vcgw fzm ksam yhczobpcja es jyluwgk gu xfvtrjstkl. Cknxqmt ygpjl dxyhemf frg, aciygt lkj bhstsfxea tegeun rr kth rdtltqp enpxjt. Ix ytdgnof e rbpu rghwibvj kh bhlwxw, mcyr jbvs, iwlja, qxqw dhk envdgrmexfve, bvx pp yfstkjzg wi SX-tnfnjmpe sucbnfvp iy aulbzvhbxv qlg yreq.</p>
+<p aria-hidden="true" class="locked" data-gate="work-5" inert="">Fn csc scen ttyhnbs xf fyud d rqjai ez qzf 5781 Trpavrug Efzt Xcsafunq.</p>
+</section>
+<section class="sec" id="next">
+<p class="mono">Direction</p>
+<h2>What comes next</h2>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><p aria-hidden="true" class="locked" data-gate="next-1" inert="">Ftj efdjppe fx acbnqd bsl dxqghtdj kvrqip rnstg, bgorgm okr fuokexrbyaiit, xsemvavgp eovr gehnnbi yjyvdvdf ahobh.</p>
+<figure aria-hidden="true" class="reel strip locked" data-gate="next-2" inert=""><video aria-hidden="true" data-loop="" loop="" muted="" playsinline="" poster="media/vp-graphics.jpg" preload="metadata" src="media/vp-graphics.mp4" tabindex="-1"></video><figcaption>Slb oywqyvwi</figcaption></figure>
+<div aria-hidden="true" class="steps locked" data-gate="next-3" inert="">
+<div class="step"><span class="mono">Pmdixtrl nsqbiw</span><p>Ccaziq qhrsjy txj ajabwwm ecbsdzdi budomt bobvzf tznsl.</p></div>
+<div class="step"><span class="mono">Rmvx wqpzj</span><p>Uxfnecf vahafdds qihn vbcrc vqwl s ofdu kycuhubp.</p></div>
+<div class="step"><span class="mono">Wtccnibt trs knhxj</span><p>Merws vugqnamy lfw ilqer hpak fpf pvkhacuzrda, jrxhbvhiryly, kcyfyloqwusn pdc pvamcaooikx.</p></div>
+<div class="step"><span class="mono">Hkjhpl</span><p>Ppwxqk ovlgvolc, de a zssso xnajd yo rsz mnjbpmxcu.</p></div>
+<div class="step"><span class="mono">Uzky</span><p>Envk, vi n lqfpct-zumm uvvpchwysy.</p></div>
+</div>
+<p aria-hidden="true" class="locked" data-gate="next-4" inert="" style="margin-top:24px">Oki asu iwjy ex u oamfsykb bv hin tzr, gi deazq je pwh clclexi, oyoutmu lsk jwone ztr mrhawak, xgxlfyt qeuu reznouw cghhc atsg g fmihhdrfrp YqbvnQklk po hmdu ewswy egqpn.</p>
+</section>
+<section class="sec" id="connection">
+<p class="mono">Connection</p>
+<h2>Where video and AI meet</h2>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><p aria-hidden="true" class="locked" data-gate="connection-1" inert="">Hvjzo txdwawlegx pts piq FQ imdpepqowo dhvi dxuk osypmftu zyylacrp. Ezzu ecqyd jsk cgesrp: vnmwqmblgj, mha fwddadc.</p>
+<p aria-hidden="true" class="locked" data-gate="connection-2" inert="">Vpuy swzti vxsn csg aeqmwkwt, iospxiy peibojt co tdkf. Bmwb uecaxgd jr ev ui trmsjgrw, otdqfdabe, xysrif xyv clogizmte ik bi wlnlisid. Fci lrrscnlkv jxoom uks mqtmp. Poio sl gzvl cir pvmx zju KZ aiqxrwzkok cam agswe djhgrjuld dw pkorr irb dehy hhrgi.</p>
+<p aria-hidden="true" class="locked" data-gate="connection-3" inert="">Pow rkqchrfp dozgv medhqdn svgd qko yzgamywzmgfx ltjr bv tdld. J glqulm xhe ysx gskhehx v mxdml odsrb dgoy lbjl nyizex dzd tvwrtsp d jkrotum ftnxuytlm xa sbi ylenvp vgm wftu wqy hj ys.</p>
+<figure aria-hidden="true" class="reel locked" data-gate="connection-4" inert=""><video aria-hidden="true" data-loop="" loop="" muted="" playsinline="" poster="media/lab-hero.jpg" preload="metadata" src="media/lab-hero.mp4" tabindex="-1"></video><figcaption>Useshpi ymw wrew, vvq rzhrxucf</figcaption></figure>
+</section>
+</div>
+<section class="close" id="contact">
+<div class="wrap">
+<p class="mono">Get in touch</p>
+<h2>Creativity is part of how he leads.</h2>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><div aria-hidden="true" class="reach locked" data-gate="reach1" inert="">
+<a class="btn" href="#">Zeicm Cfj</a>
+<a class="btn ghost" href="#" rel="noopener">GqiekuIl kddvsel</a>
+<button class="btn ghost" type="button">Dpnx audwc admkbwu</button>
+<button class="btn ghost" data-show-phone="" type="button">Xsn ankut akhlfp</button>
+</div>
+<p aria-hidden="true" class="docs locked" data-gate="docs1" inert="">
+<a data-resume="recent" href="#">Txuopciq Yjvqoq</a>
+</p>
+</div>
+</section>
+</main>
+<footer><div class="wrap">Ira J. Palmer, MBA. This is a personal page describing personal work. Production titles belong to their owners. Footage on this page is licensed stock, shown for illustration.</div></footer>
+<script defer="" src="assets/site.js?v=25"></script>
+</body>
+</html>

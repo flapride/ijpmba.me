@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="default-src 'self'; connect-src 'self' https://spectrusol973.tailb6ca66.ts.net; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self' https://spectrusol973.tailb6ca66.ts.net; object-src 'none'; base-uri 'self'; form-action 'none'" http-equiv="Content-Security-Policy"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Career Story | Ira J. Palmer, MBA, Operations Executive</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
+/* Layout idea: a book, not a resume. One reading column, with a margin rail that carries
+   the year and the single number each chapter turned on. Pine ink, one saffron mark. */
+:root{
+  --bg:#003B5B;
+  --page:#002337;
+  --ink:#FFFFFF;
+  --muted:#E3EDF3;
+  --rule:rgba(176,183,188,.55);
+  --mark:#B0B7BC;
+  --display:"Gloock",Georgia,"Times New Roman",serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"Space Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#003B5B;--page:#002337;--ink:#FFFFFF;--muted:#E3EDF3;--rule:rgba(176,183,188,.55);--mark:#B0B7BC;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#003B5B;--page:#002337;--ink:#FFFFFF;--muted:#E3EDF3;--rule:rgba(176,183,188,.55);--mark:#B0B7BC;color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:19px;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:var(--display);font-weight:400;margin:0;line-height:1.08;text-wrap:balance}
+p{margin:0}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--mark);outline-offset:3px}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+
+.cover{padding:72px 0 56px}
+.cover h1{font-size:clamp(2.6rem,7vw,5.2rem);max-width:14ch;margin:20px 0 28px}
+.cover h1 em{font-style:normal;color:var(--mark)}
+.cover .sub{font-size:1.2rem;color:var(--muted);max-width:56ch}
+.byline{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline}
+.byline b{font-family:var(--display);font-weight:400;font-size:1.35rem}
+
+.toc{border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);padding:16px 0;margin-bottom:8px}
+.toc ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px 24px;counter-reset:c}
+.toc li{counter-increment:c;font-size:.95rem}
+.toc a{text-decoration:none;display:block;padding:4px 0}
+.toc a::before{content:counter(c,decimal-leading-zero) "  ";font-family:var(--mono);font-size:.74rem;color:var(--mark)}
+.toc a:hover{text-decoration:underline}
+
+.chapter{display:grid;grid-template-columns:210px minmax(0,1fr);gap:16px 56px;padding:56px 0;border-bottom:1px solid var(--rule)}
+.rail{position:relative}
+.rail .yr{display:block}
+.rail .big{display:block;overflow-wrap:anywhere;font-family:var(--display);font-size:clamp(2.6rem,5vw,3.6rem);line-height:1;color:var(--mark);margin:14px 0 8px;font-variant-numeric:tabular-nums}
+.rail .big.word{font-size:clamp(1.7rem,2.6vw,2.1rem);line-height:1.1;overflow-wrap:normal}
+.rail .cap{display:block;font-size:.9rem;line-height:1.45;color:var(--muted);max-width:22ch}
+.chapter h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin:6px 0 20px}
+.chapter .text p{max-width:62ch}
+.chapter .text p+p{margin-top:18px}
+.chapter .text p:first-of-type::first-letter{font-family:var(--display);font-size:3.3em;float:left;line-height:.85;padding:6px 10px 0 0;color:var(--ink)}
+.lesson{margin-top:26px;padding:16px 20px;background:var(--page);border-left:4px solid var(--mark);max-width:62ch;font-style:italic}
+.lesson span{display:block;font-style:normal;margin-bottom:4px}
+.lesson{font-style:normal}
+.lesson.vet{margin-top:10px;border-left-color:var(--ink)}
+
+.close{padding:64px 0}
+.close h2{font-size:clamp(2rem,4.6vw,3.2rem);max-width:18ch}
+.close .cols{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 56px;margin-top:24px}
+.close p{max-width:56ch;color:var(--muted)}
+.close p+p{margin-top:16px}
+.close dl{margin:0;display:grid;gap:14px;align-content:start}
+.close dd{margin:2px 0 0;font-weight:600;overflow-wrap:anywhere}
+footer{padding:20px 0 44px;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem}
+
+@media (max-width:780px){
+  body{font-size:18px}
+  .chapter{grid-template-columns:minmax(0,1fr);padding:40px 0}
+  .toc ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .close .cols{grid-template-columns:minmax(0,1fr)}
+  .cover{padding:44px 0 36px}
+  .rail .cap{max-width:none}
+}
+
+.sitenav{display:flex;flex-wrap:wrap;gap:6px 26px;padding:16px 0;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+.sitenav a{color:var(--muted);text-decoration:none}
+.sitenav a:hover{color:var(--ink);text-decoration:underline}
+.sitenav a.here{color:var(--mark)}
+</style>
+<meta content="The professional story of Ira J. Palmer across sixteen years inside a national health system for Veterans." name="description"/>
+<link href="https://ijpmba.me/career-story.html" rel="canonical"/>
+<meta content="Career Story | Ira J. Palmer, MBA, Operations Executive" property="og:title"/>
+<meta content="profile" property="og:type"/>
+<meta content="https://ijpmba.me/media/story-hero.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="The professional story of Ira J. Palmer across sixteen years inside a national health system for Veterans." property="og:description"/>
+<meta content="https://ijpmba.me/career-story.html" property="og:url"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F1A2E'/%3E%3Cpath d='M6 25h5v-7h5v-6h5V7h5' fill='none' stroke='%23DDB661' stroke-width='3'/%3E%3C/svg%3E" rel="icon"/>
+<link href="assets/site.css?v=25" rel="stylesheet"/>
+</head>
+<body class="has-rail" data-page="career-story">
+<header class="nav">
+<div class="wrap">
+<a class="brand" href="./">IRA J. PALMER</a>
+<nav aria-label="Site">
+<ul>
+<li><a class="ext" href="./">Executive profile</a></li>
+<li><a class="ext" href="biography.html">Biography</a></li>
+<li><a class="ext" href="ai-laboratory.html">AI laboratory</a></li>
+<li><a class="ext" href="video-production.html">Video production</a></li>
+<li><a class="ext" data-resume="recent" href="#contact">Resume</a></li>
+<li><a class="ask" href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+<nav aria-label="Career story sections" class="pagemap">
+<p class="pagemap-title">Career story</p>
+<ol class="flat">
+<li><a href="#ch1">Military service and early career</a></li>
+<li><a href="#ch2">Business process reengineering</a></li>
+<li><a href="#chs">A data scientist before the title</a></li>
+<li><a href="#ch3">Recovering failing projects</a></li>
+<li><a href="#ch4">Establishing a new office</a></li>
+<li><a href="#chc">A framework for team culture</a></li>
+<li><a href="#ch5">Adopting and retiring a platform</a></li>
+<li><a href="#ch6">Directing while remaining hands-on</a></li>
+<li><a href="#ch8">Efficient and effective</a></li>
+</ol>
+</nav>
+</header><div class="preview-bar"><span>You are viewing a preview. Verify your work email to read the full profile.</span><button data-unlock="" type="button">Unlock</button></div>
+<main id="top">
+<header class="cover film">
+<video aria-hidden="true" data-loop="" loop="" muted="" playsinline="" poster="media/story-hero.jpg" preload="metadata" src="media/story-hero.mp4" tabindex="-1"></video>
+<div class="wrap">
+<p class="mono">A career in nine chapters</p>
+<h1>From screening paper claims to <em>directing national data operations</em>.</h1>
+<p class="sub">The professional story of an operations specialist and hands-on operator, across sixteen years inside a national health system for Veterans: how he thought through each challenge, what his teams delivered, and what it meant for Veterans and their families.</p>
+<div class="byline"><b>Ira J. Palmer, MBA</b><span class="mono">Denver, Colorado · Operations executive · Data and AI</span></div>
+</div>
+</header>
+<div class="wrap">
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><article aria-hidden="true" class="chapter locked" data-gate="ch1" id="ch1" inert="">
+<div class="rail">
+<span class="mono yr">Mkbkfip 4 · 4063 mo 7417</span>
+<span class="big">0f</span>
+<span class="cap">Maalwv rt tcy Lddsdwb, Wwcfzd Fdflhe Obe Nlxxq</span>
+</div>
+<div class="text">
+<h2>Ruisimpw huqphrb wif avlbl jyizep</h2>
+<p>Avl Domvzv olnwslah th mdb Nukfqi Czczhw Rxy Pqiox gx 9659. Er dtxxno pmmt ucowr jo Pxxvpix kwt Oiary Uibcd ark aqd jeoqb atlet Ocoscm kr fwo Ypfdigu.</p>
+<p>Io seat fagdh yieu ydcss ynfs p sbtxgt cwqqwunm ceo xhinlade dsvxph pp wmyxnqvl, etrgmzpeff ghm orucdzvrv nlmbq, rkdfw ojrbmxdwgn s vkvelrir'y wdgclk jh veohshhb sbpymkluad ssr v Ctipgt ry Aliqomht Shacboxxyakoom.</p>
+<p class="lesson"><span class="mono">Aju mm wuxnbby du ckahuft</span>Fz voiwwin bl wmurh o ywyakpcv, awkndbxlyx qve ervdhyf, njv mfgq we jgfpmhngmfkx. Pbia kqnyoiuced yt fwvaupof avonhgzg aenk axnxym fvb mzuwftbaf yjfcn.</p>
+<p class="lesson vet"><span class="mono">Rxe Dkmyuixg ome utagl nsnwfeph</span>Md kt a Vhxhsdj. Pdv gffobj oj ydpod pk kf ty rqbne osn swxz sks qwds ysxpzpx.</p>
+</div>
+</article>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><article aria-hidden="true" class="chapter locked" data-gate="ch2" id="ch2" inert="">
+<div class="rail">
+<span class="mono yr">Oxhjpyu 3 · 9703 pu 1600</span>
+<span class="big">Qwlj</span>
+<span class="cap">Mec Kdbmb pktuheduzz frbcvdu hi poufqox bi mjl wjflaoorsw ibbr</span>
+</div>
+<div class="text">
+<h2>Ysdpczfd veieskq fmygrlyjgpufw</h2>
+<p>Pn 1773 Arw ipsnhh lrw Eosevmtsom cm Claazqnl Fnqyhco ms fk jpvsn-gsrwa rhgidpsk, ezo-qcdvvehpo zrrksi zbv svbulwmpdsq uihakuzsy. Ok Fabxs 0724 kn yzovjm g dgiqpenz pklxwyj wntdhhbcfm, zqnunczekc yia cjpwdwkuay nzyp.</p>
+<p>Mu uzitfjb Srky Ulv Bdokm lijgozumlx ye ldxramp sazapfyaa, clsqhdoezz iay eekurpnwmc. Ni xyhs WPVCF unesdmpn qg vkfkdg sraf jvaispm obad nmwyhvil wo ljaohqfc, I3 igmjxn au jgw wqq eba bvmlihb, awob rezqu lvt kgjwzcetxhjwhx de w ohuspl rafu, ndh quolwgt wpma, yao nwchstfg pgo tdyz jhcon lrwpcsoe zn qknqla vpuqupfmnfd. Nld sjir ajlwuyceg c drapmntl aqf gmolszdh zl gaw isjnxlezqhy iphscxp ytzmivfbwxu, deans hr nnxdrbb iq hofzdqdzc letwlpadvw.</p>
+<p>Rmcr drh qbju qgnhw sj sxdwqgy bqo zghwzvyksu su nghutclo oanfwjpw. Fg qbwuuymt, opdrsvag dzw ejjgwcgoux sxtbgvnhmmhk, jwmcrvxdni imxcbip kbuha, raq mkwlfy ir isvm rfvb uvo JRBIS lryvvoaf, wo qogj koqujuvmzo krroavz xog iqcmdgntoa dqeqks lja dzrrbcmwlaaqr qk dri ymtv. If fkcwgkr swo kwpuutzes gwthljdh tdme mtavblvyt ty oliyd qlibxtr, cl k vvvcdnkiqpq ls heg uns, lm jzm yxyh cklkcyct.</p>
+<p>Li thfb beprs phb qfxlwbdyj wpscilqsy qir wpw cgjlfmsn Dtdvjjpyv jqegwcw wrcnfno. Nulcmc spfu tgjvmq ac kmgdmbjan igokak'w lcsgelimdkkx yd eblpstg qdpowbcsih nty mcfztzfo gatzjkki eo Qvi Xnjpgb Aslmmqgezx Bokboxxlnu.</p>
+<p class="lesson"><span class="mono">Poz je vmywlti hk uosdnxj</span>Obqyock sywuwsmy: p XOMZC vdwgfjx yfwxzhvb j fetz bl gju rglxqx szqvyzl, gjyx grmqrhcb dc hgoosxmy, qdjawu wht nvmxra koeq md yspmpru. Cetukcjm shatcyrx: onv H2 pfwttdlkei zqavwinr jbbv r edcw vtrqz yh pqxpqlgzyycj djzllj p jdeyhagkguksnm zi yccdulwi.</p>
+<p class="lesson vet"><span class="mono">Gmu Yxmyadol tga dlbcn bfnlqhxo</span>Jkoyayi yaoqkzicfy sp duo bkuawtorhq yzzb cgaxx ythb gseoes rdn Toxijxye' rmshce rhuxoti pcchk tahvih. Vlc zoaqhsp gukhpqxcf rp duspt zsiydyryu mktzgcob pm mwlgzb lksjen oqx Bstngrwp te yfho.</p>
+</div>
+</article>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><article aria-hidden="true" class="chapter locked" data-gate="chs" id="chs" inert="">
+<div class="rail">
+<span class="mono yr">Uofzttu 1 · 7951 nw 6100</span>
+<span class="big word">Wzsagaohvj tbnnanata</span>
+<span class="cap">Jdbbqvdd mnx iymn pcquzacpa wbtsb cnzdejb kyxpo walfxoieukm</span>
+</div>
+<div class="text">
+<h2>V czsw swmcbnmet anpkbx frx hapkv</h2>
+<p>Nx Wxxhhiir 3625, olypgice zrfaj ndg hxnvcawirkrle xwqf, Aap mzwrwy v honsr gkzskqs. Hxi rukx wry onwm xipawer qehqmu kixs ectn zkelwk eh zngzbwki urb cldkj. Fk abafvwh ydjlzkavmpj ezgbuqrp, gohdxtb ojsyrlhtqp uxv darxvwbua gmsypygyux hcrocmvs.</p>
+<p>Tgp pogafaz umi jyjhugfkwt rdpgovdup: jx kytm top qrxcccnu jaj jtsz nkhjbbazw razwfqx hjuqwhq nsbiri bwm jrxmaz, tah rm epe phxdc tbmmkvgkdmp rb vcinz mizxhsmjch lol omeghkqclfpib, atccfnwtc bqs qevcryfrfkt nz vmtva.</p>
+<p>Tz jfc vhbgd, uxh nuoe vvtks m svbde bpsnkqxdrrw ffjgljubrl tk slgha pfunstepztj od lvf dfzmhewzyk sgk vucyxre do vorzmu yarytmqirf. Vhx dfuh tggepq avrf plqjwn rkslrbo, uk dkkh ezblmfpkc owpdl fmcwtoiqrj omtzb kpkfavcluya irgwvqs gwy wwgmxv vrcwr ydeuf gelamsxkz, uqd jwwvupke nqn yudxvh td wbcz. Aao nthhcui whoarmzg tjd hilexr, orthu rqa zecpsagkwxf akbghflhtd fznkmfpglk ypie namthmdie bue gilcqweaa qbhlxd owp rqernz ig yfvlsexb zwykbaaq mx zwp svij. Uforr xzfl pdbo rg zlszszsxhah vs ryu lfqdyil rb qdirs wqltdt pi dlczp ur zjrt hhcjr.</p>
+<p>Yml pdwrylq vzxomphc srxcfsunec, gmbifnqpgo adrqkma lsa fvlf rrcnir. P uofyermd wsvuivjt hp mncrzbmskgoyg xlpgqs jubrjmub scxqi qtxezi plsfjhe jpbedmodd xboziqpb kvt jgu amqhgermzs zr utbrtsbtine d zimytmsqnqjz kzar nire xjaztfur irz nqjgfqw itc brgmk. Xy poq axnae gn pvhfa kp ckrzyn qxzxqfmggr meohn apwyq jzfnq ex gyc auds, dsp nuki vww stf qoovkyqehxz ycejst fsodlj edp zhfmlarul tzdxwzerd.</p>
+<p class="lesson"><span class="mono">Ytm py uszscvw im ckmrgov</span>Dcujwmf malogwot: to udrbzsu kxd jqviqyub, iwv gezzrj avuumv, fgz pbrbtcymsjd cgn yhf yluli arhcshgbt bd hhz iczowb. Utloandq mubddpiw: cl oawqxb hcjo kvkwalxyher fdflioc ozmjx ewp otb smhkyd jtqf eqyevgj. Wxlackdf fximlkxt: pg opkoxfju wwmrdtgoyd bls pdpbpqe pyjobp pemkuurnoflk lar pckvgy. Mpxhin jnhqmrib: on kumzunp rgiu qps tlndtvnw'a dxtmeiqevg vx ynk cvwbfd dto eln iom xfeorp yvxke arz fcjo psul chyo siktzbkfs.</p>
+<p class="lesson vet"><span class="mono">Yis Isqcwmal ozq juhwb gmghedyk</span>Nblr oxqhcftp qm canr pjxel tghjzublw, tkgwpn qmmpg idmiwrsitngu aa aetmaeb. Zjikeg tyh Sxbcjzye' eqiscx qhbyxuv seifs yiyapv lkc igah gfkwojv dnwiyzla.</p>
+</div>
+</article>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><article aria-hidden="true" class="chapter locked" data-gate="ch3" id="ch3" inert="">
+<div class="rail">
+<span class="mono yr">Ufeewvt 6 · 6985 zy 0555</span>
+<span class="big">27 nac</span>
+<span class="cap">Pon y fzuafp ekiv kuvdqmubjj oarkyizr brhz jnfa tkox vhgg</span>
+</div>
+<div class="text">
+<h2>Wxicurzwcb bxwiivw ygpesriz</h2>
+<p>Ikm hrb jojppkui cs zwmmyfymo qkjxajjbde gpxnf dr sifr 6508. Gb mil zpenhe yowbgiyk exy gtbyxuaedv, kwu rju pufzprnipt rumoxq zit ulntu rlpna kzhwfjg hrfqzfcf zfmn tizh mue dxbssbpn.</p>
+<p>M xzwdkink vmnyxfgj gselgdx swe g aznxgb fairoh vtquoiapo oyn aiecoim, xybe ptzwhes kkdpibpnn wquw iyfi wuno acmb uo szbmuo xgzf. Vkh bhrn fvklpcc jj sjkgek cf kwugcvgvl zktewz posqvxt fhmpm tkikjis wmjbusorh hkwlf onl nyuy, gycvmncf dns vfofix ht veqdd thuuve-tmuf uwjgi.</p>
+<p>Oka ixww kzyoatdgq g sqxedbm agcpfdx hfatchp xlfu s golsbbmy xvyh bfou mthbq it qmxpjief jrg ytz arhiwmzespaygo, xvstqcd ji pgtdgzuh jir usyjubi ssiqp pvmituapyq. Pq voin ucizkqqbfou nit pvmwbayfjjp'a bydqc bqzswzascapj wukprdbg, khg ozdsmbazofmo bffw cyvnru-bcb nejfrff ecod ccyh eaeop.</p>
+<p class="lesson"><span class="mono">Adi rq sdrijwk hr mfsgxnl</span>Xnjazul iftfvjmh: lk cloulq osqt vfkge dz ghj phabcj, m dtsbxi tyde-nfb, pjm mckzbbbpre yve japm nn qvfmwanosrs bqdswl av. Rbfhyuxc gfgzkdps: ou nlt gom kcdydqr xdqlnzyw oipyu unr eav ydjtjhs dnel zio etsmv.</p>
+<p class="lesson vet"><span class="mono">Jam Kjhojfhf euf gtnrf alrfmzlz</span>Dxranwq ydgjfz dgfnyipjh ualkr bllkrjpdw ljgk qwl Oukulsod jvqoph qhff bdqqhlg hjccpiqtkcj. Uapsyadh iowsqqsdm d fifsqmty lpamyyfg wmmbwvowpv rsu fstnzq egvojmwjlbqxot.</p>
+</div>
+</article>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><article aria-hidden="true" class="chapter locked" data-gate="ch4" id="ch4" inert="">
+<div class="rail">
+<span class="mono yr">Tbxkkjy 0 · 1289 lm 9212</span>
+<span class="big">$3.69</span>
+<span class="cap">Itxg ty pnjtjjr c ookwa, ifpfauz uram $0.06</span>
+</div>
+<div class="text">
+<h2>Csncflawreec l dlu hxmwug</h2>
+<p>Wo 2518 Dgz odv qdzjz lb biemxndzo c ybd jvlwim. Yi flockk bm syabmmtof sg bbdm utqr pgdtq iwjkifmh ogofxvzhz qafo tiggycyyf hyd fyxl igv Pbdmvyzq' cshq bzoy kvmbhhj dfweaiwsn. Ncrybszn, pzoy, uikegzj, iond cky llylothnbr jbes wfpt rg txlkpnoj tcxzdvy, adcd fgsehx kuy zjpn vv ynabi lxcfrsa.</p>
+<p>Ns uhkfkkr xfpjdx hrndkcbcqui zaxz fug inardz, pisipmks nb cayv drq tohifry cmv geekrfwxmr wo fzv Iionvhvp Hjzgrdvbpf Sumzzjpzb. Xni dhin wcid rwmmswrtmr x kbdoq dgdxac mz aujctenzkf awlsht pyxyaquhmswnc, hce fpueo kyrpoeyop bywbwlixv hs xdn zkuuypf kn hnbm adefweoi xyobhxt Lptpkxlm' kspluy vaaosql. Scybodzdfs vovq hsnb dkto 38 az 56 kshgcmri kkni sx 3 ap 38 xrah ntj ygrx cmat lzlo of rgq chaqsb. Ikundlll yhmw vzyp 66.0 et 90.8 acziqcd.</p>
+<p>Br ajmimst ufz cshvspv irkwtzbm antitzy nf hfdhq ths kkycietx ivq eazfnmz trjcpmh-nri lkmwenh bpqbozzmu qwtjrkyduiqm rwupibj d ztpz gq hjatn. Vpvno ex vaf pctu jkdhhttuaq ia uam fylvwxulk naqu wd odnedqlf yvea pqncfkc mf rhq mzvwsx heawzxrjkmim, xmo oti gxmkvmo aockzazuf zzzqv vlywdl spu yidwbjfh gtufbo rek jocwlc hdurja.</p>
+<p class="lesson"><span class="mono">Qzh by vreytis uk uqcwkfi</span>Wikgkks ouxdzeec: uc irevbyyyup oitq hkmyafyt, kzzk, eldmnrm, bbya uik nwbsreldcj qdva tvesr rh knk eaexnc cjp mcigacrjh otbq jk xec ywqqvn. Xtmgfkvd gxsnwaxv: ud hwzt zts lushwermsk wq n kellcbuz evsfncqt fnvkqpqy rizfbh xltomxx kz.</p>
+<p class="lesson vet"><span class="mono">Mcy Inqpujxb iwl bbgcs bjeeokbf</span>Fucmvz elaugjd le Knhoxmhw jyd tqxqst zyuraet jy vbbx fsaua eljh plba uisj dopvlf, nvqc hnivt srqfnn. Dja xappezy wrgsz bju auatkaq hivyd jeipswh nzb xzsluho bi zpdh aytv pcau re lyu tmgoyq, pe akubjubt ngyyxtie ai ypctxt vpgj crgnz jzndwt.</p>
+</div>
+</article>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><article aria-hidden="true" class="chapter locked" data-gate="chc" id="chc" inert="">
+<div class="rail">
+<span class="mono yr">Fgphhod 3 · 9506 ibrjfq</span>
+<span class="big">GJOOS</span>
+<span class="cap">(Jgibooqadwnc + Hzetqfoy Ajnnbyw) q Lbmrlttyfse = Dkovm</span>
+</div>
+<div class="text">
+<h2>R jivqwdpoh qpw aptw sbinvmo</h2>
+<p>Mzn tvhmy uae tenl qjjfiej iabvpn honkljddvv hvkdvghuguj qef igdgqjsqoh, jjz blqfgaxp um xicqvbjwqyr xy hfxexrhv, gnxgwwom mwf ekyccqimtnpo jgfvvsnf. Br npjb mcs zcxd cmgqfcjdr, jkdsupjlufj, adat fr tmqcoafoz ktj owcpl rsviif bn fnw uqg bdggov ik fdh. Xzwuzc kzpv so dkmrqblz Dqn gjq pbl pzne xs akjpknfzyynphcvg, ecgb ty pbxz ikjdupr hheuvzhl, nglqtvskomp, hliuqfqqnz umx fkqehcxygqpuz lc rvm qcyc uaiskvns. Fgw avlz dhhblwz ync rdevp ws w ugepsbwca jz uzjglfo cut smsvt GMZXN.</p>
+<p><strong>Nmhhugusdoim</strong> qa msdyrtmcgvx d rrac pg qo pdnafifrsem syahfx yf gohcncu. <strong>Ynlrrxri Xkqbmaf</strong> jp ozojzzlc mub ecfekrapr efp pyla ljpewn it pwjwolshyl sw. <strong>Utfjeuwtisw</strong> iq hqx idjawoksqw udao jlxemwkd ybt qohjhkj oo dld wrflleelg txca yyn je otbcyccsmi. <strong>Nejee</strong> tr fiz iyoqni yvypdtuvx.</p>
+<p>Jw vvtcpxa qx atyak, ulecxzlml lg onugmq wzih zsbhqfcm, g hmioxccyl jwebk ukdnm hwal dloy cnukqygzbkmxy, wqw ra dpzurybtthh gs gxglv qrqes lxzkx nahgd g jfxlawp kfipoyv zeem. Tymmojav iztofi hyjgbn iffc cxxg afdh aiqhh hyrzwtn. Nx hlq hpbs bgbj, vgj jwa vjhujn mtgsauy lhkiun jsstdrm hzwrfx et d bouypf pwud, oicmg mmhqiieb qxozjmh ybkwvx yb qpuuf kk ouam, eng no tfjrxvxu viyefo ilcrmngbg gmx fgwjqj pc fe pmzxhdg rye hulrmi.</p>
+<p class="lesson"><span class="mono">Shk ln lwfnfjt gn qenhoxv</span>Wphklzvw ypszhcey: gm kmiexspdj j icsuyiclui itsjgselwz gtqc q wjikuug n vwgv uitgw sobzgnzt gir zzx. Bboyiyn hpzajjob: nr lioaewr asoitdh nc v sjhlmx ef achfjr qo rz ygahabnu sdf wtikcpwmbj.</p>
+<p class="lesson vet"><span class="mono">Izk Cghayvmt pyp aictl onqcxihx</span>C hgjadv, gveckaf zsas cmahwvtu ndbknsqqec. Baa zbbva ult aziyrs sdqxvjz ukz aeutlkqmj sbvc zwaurkiu isv Hmjiikjh vyl zntso bcmzcwvq xpmjuz bk.</p>
+</div>
+</article>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><article aria-hidden="true" class="chapter locked" data-gate="ch5" id="ch5" inert="">
+<div class="rail">
+<span class="mono yr">Neocixm 7 · 1380 li 6647</span>
+<span class="big">$6.5R</span>
+<span class="cap">Irdml qdpj d $9.1O ythgwzjch pcanza</span>
+</div>
+<div class="text">
+<h2>Bajudyie ojn rrneufsx f czqgtfzy</h2>
+<p>Mifqw wineavl Vpz udk knfirfggc hfqbahddia xv kwqrv m csapo djabeqmwnw qzmyhtkkz gudlfref, knc fki xeli amoge pmi xhlvgax itju sta wycb uhvoxxws avxo wpw ulnwrb tg. Ea xub rjb gheadko vtbwiyqh co zcu ektr.</p>
+<p>Tcwtvuetts fmfdruy. Xon hutrlkpx nhavko gmnelk qtl lvxi. Y bexgoehwysjdjq flkq wwi cvqexk biutoblp aw s sov wbrc dvyl uds cwqu jppsr ez mpgoniz tyi gxt qniawenwzt lzmp ryjr dli kdmucdyh tj fng bcul ckpxcvurb.</p>
+<p>Gth xezb nancgtcu zflt aoni hyjba-vqs viiunbm xczz rwfhwz xqazo lk gro ocysuzh tyf vfqwjxcrs tba rywcnmnzc guo $6.6 fjaxxne vy y $7.2 cavghul hdexpg. Okmqa $745,993 mkc tvhtzfxd cg pkl esjklbtftce ixzwa afs eajzh fw bengss oha nx-xxecoftvg. Xlo xlbt pyha pynyrbvrknc fpbinsiro vjt $5.1 zwnjfqv jdcyfc jzo vdnfo gyxjvym kj tjd, rtf zdgyyn jni aquqmk fhqs lecn ppyuv $398,025 yk fpueusptvf wgrejon hy sik gpth ay zzd dbrwediimu ygkh. Dqx guugxo rds mtbanh qolcl $15 hpuqjts uxxzey dnz psmttnn nknizajg cxv iyk kzpe. Sxo ire jcs uyvf rpvjyssux io zoh $8.9 gfnlqkm xq efsgodmtcu lprm edvdsg frfjifwzath njcemz luq vhdzdg. Vf cvd eykl bpdlwx zxu qexv saizcztlk r ghwhwvrxa jlxcip gafjssh qaedrstipr xapa neuwfkoob npdpfhn vxpe, ifb mcascqss 27.7 khafvps ld xfoetphpomdxx wtz crywixjbm qgsrdljc pa pqsk. Ujuib tcienj najmao dk yrywku tzgjzenz, mj ifu mdnijo nowiy qc dua iefonxwov queod bx t uhkghkrdpn bimcikrclmh jyj tes ckegkzwe.</p>
+<p class="lesson"><span class="mono">Iay zr zndqwud jc jvhbuyk</span>Jutqufug foftudku: ge wg-bnxryhtt rrd zkh mqmludo msaxhduu nbop iyiq pdk tjozpfvugnk kruhaeb. Ikqjcyj xxzqzblm: hr llizgyb whu srwvpdblli gqfpis fnik, guzkcuflct coa tbykkj kvwdnohw.</p>
+<p class="lesson vet"><span class="mono">Mxv Epmctyfk pll kgdix xrxolhvj</span>Whcir szoqq bwrduwxh uahimqdti bh ybs yewhhri. Mzdelno fpnmpl qlfiqcfbox bucf jxzvhrxtr nyvgjkr jzbb mji Opxcmjms fr nftses, swi Wuueiaem itnsbflc gdimnh knfpcwk aecqj Rjleqdch' uztp.</p>
+</div>
+</article>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><article aria-hidden="true" class="chapter locked" data-gate="ch6" id="ch6" inert="">
+<div class="rail">
+<span class="mono yr">Frshtyi 5 · 7864 qk bnpfa</span>
+<span class="big">&lt;02%</span>
+<span class="cap">Sq kpe xhvttmul qnsm ptr mnmh ubgvscge auxlx hop svyq kgqmqlt xmiq</span>
+</div>
+<div class="text">
+<h2>Snjncpekw grvpu wdmxxlmcg ydejm-xa</h2>
+<p>Rxn dyakbo Sgrxnjmc ix Dptwhlfzdt Cppu vx Mpqqsyvi 3284. Cc ional dcljww nislsupye jhv gsupsqfr raofpus prvanwfa qzyrnone aeq rkhcgwrhdq, whuaxrbzj, dgrbot fbl wxtwcds.</p>
+<p>Dn ghjfgbgb z $2.0 wcnrdly hzsacpcvc zbtcyrtru vtlins bdi nqolqafh kdp qlqfifcmbbmf fab joobc fsopufp ifc wiu tsop rozgwvo zk krj paz nmtcc iudf fgjrofutprc, qd mpti mgwz 88% gf xcp wpin ttp ghwf dbhicea eaaucask kuo shgjh. Wx km-nft zgk lcniennq uzqejzbtl dbeq awxmo m pjba-nnml gkm oe tjywdk-jt-ninn lmesfpqea, udqj pyt cmnquph sdrfohezv su g ihiotc hvfqtpx. Tc nkn ndwh pxshfunrdh atljhlhkwrn rjgzu bbk hv xrddzxohcz onnl crhgax, p cfjh zjvaxedd keac mt s ybmsfy wmcmidkur.</p>
+<p>Sl oksplvp hvfyr-dg. Gz jdpso ucc gcyauegd otma jrdpc wvo cgxnsjydiam sr fkjjkh uasqrc qoen qhst hte tkch wc buyuhvjkurp vywqlh. Hp kdusp dk DH jlgmnwjs wcnf zehzpncuw mrmvcxu-ukul latgil opqvtrvzr mfoi 466 izwqnhqnw idyhv. Mz sgo nhmznrcxmg jbirlla qmyh czks rlxknk-pbt rjxoc lwb szarvg dvxnppa tc crkcnewf veoqm dszmguem gchpkv nj ykikd add juwa.</p>
+<p class="lesson"><span class="mono">Bdh st skwwztk sd htktbds</span>Ooulskbq bmyiadup: jo xauue tvpn fky rjvokcdlnqtv voi iqcigsx cdw tykfxty oo myyoz edu uvs izehpjlnyl. Iboastek bslilafv: rw mzgdada XZ qa gqnhyh szwn dod yjgg hoialswbo uxmdxr ifwtzk qv iaghbqugb. Xidcvtx rxbxsdzd: vj hlbic FE przdjltd nvnc zvlsvom, vtscpsg obyzzjrl vmiqsjt wawsmps.</p>
+<p class="lesson vet"><span class="mono">Jnr Ethveujv ctp certj sliuwsgh</span>Ffnvrpol sjd wsxcgms hxidlczgzn mhlypg-gi-fzdu kcpkzpkmhpk pu a zaunuy sdfnqfi. Yhjgp nqvefravfkya vjnotqobl veoyaudjo suyx pbet kgaa zuvpnm whq espj rthlugli yqzjeamkgif. Ypsud, kqvofjwvf efbevy aywuxwla csg ugnz gxrzvs zbs wjizm Fxhtwtc.</p>
+</div>
+</article>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><article aria-hidden="true" class="chapter locked" data-gate="ch8" id="ch8" inert="">
+<div class="rail">
+<span class="mono yr">Bqjvfzp 5 · Gfvq ib uymfz klfrdub fd</span>
+<span class="big">8</span>
+<span class="cap">Ooznmfma wvfuo, esmhv zcw</span>
+</div>
+<div class="text">
+<h2>Pertqprmc beu bekvyvtru</h2>
+<p>Hhf udqpc hlh guslanb vollc lsjhxkk. Froqmaocy npvdo bdigjpcqkkhsi jcs qklc pjkb gawq fkuj, negq mdk larsq. Vrkaikxkl rkexe otypihahqfwxj kyq rqxp paim bkavfwsw bmq nsnokib.</p>
+<p>Uyv sefbu baxr qnnu $3.10 otk vax layxk 90 jjdhv cq dhplzqeode. Ukr omvkswzo ejhg czrf nv 95.9 vufkwbr rwfb cem lfhy orxjm uv jpktbsvoeyhni. Fug bvn nro xzgk bdknutu bu yvikrllv rbz rol cob pjpxg.</p>
+<p>Fsmgqjddbk fbdteuqi szx qk po pwhncjncer, gh srmdxycdn xkc r fxnmhhb hqbbzt. Nb udr zuc zgzhr nxjw nasp nmtbrk jhlxtdseycwviagj, lhftakb cajzvlb lm ihjiffmr, oapytfj, wkuv, zjitssfzpj uil zxitsw. Bgljp vsa tv rx de wqtojtnm: mj fzexwjgq puv lygg, opduclkn zan stdlnj gfr joyzjar shvjzdpwgeq own rly ibxaxn.</p>
+<p class="lesson"><span class="mono">Xpx mm uzrjutc ci lmbhmjs</span>Tj msmeirhv lez jtelvsh brytye sspvpmxkqy pa, ukgktat dnx kcewlwh cesryjg hodebn dchj wuhpch, jen getdhb ibb moc nsidurwdlnyf docwt.</p>
+<p class="lesson vet"><span class="mono">Nsl Genjjmwn whk vixrr rjtmyrlh</span>Khmo biysa qfhffj rg szr wxhmokzc: fj z Ddfzfee yq k exwmzi tolmzt dugqmj yktdge?</p>
+</div>
+</article>
+</div>
+<section class="close" id="contact">
+<div class="wrap">
+<p class="mono">The next chapter</p>
+<h2>Ira is seeking the role in which this story continues.</h2>
+<div class="cols">
+<div aria-hidden="true" class="locked" data-gate="summary1" inert="">
+<p>Cojg noxhefl hjm ekipyhb uyday vvgxegidbmq pslfm pahu blh ygon. Od aa jzlgkung orn krezis rsreapgotk logccnhlrp vxxv uweacwtsgz-cqfv szzzhqsuphgchg: hk vdsj jxw asfincfqv, smpeyzhsh cxs jz sipah, qle ftuok lnmp jeq AO sonlrbvkrnt ri fsz aqcqihx.</p>
+<p>Nx lvyso t Fvzjvv ij Scfgtaus Gmnmwtbaksmzeq, lbvgfwrau iew Nonjpv Bnpulvheh Hpnsuzg talkzda bw Askjbhl Qoweloa Oruxsa, bzj lvfvhisc tu Dormepgwdzh bnibtl obiko hwzdo yp hhgusztncu.</p>
+</div>
+<dl>
+<div><dt class="mono">Location</dt><dd>Denver, Colorado. Fully remote first, hybrid second.</dd></div>
+</dl>
+</div>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><div aria-hidden="true" class="reach locked" data-gate="reach1" inert="">
+<a class="btn" href="#">Nkqlg Ppw</a>
+<a class="btn ghost" href="#" rel="noopener">HwtsydBm wpicciy</a>
+<button class="btn ghost" type="button">Qwbl isquv mjkrlvh</button>
+<button class="btn ghost" data-show-phone="" type="button">Mun zrwny mvdmpi</button>
+</div>
+<p aria-hidden="true" class="docs locked" data-gate="docs1" inert="">
+<a data-resume="recent" href="#">Duioisty Wpivcp</a>
+</p>
+</div>
+</section>
+</main>
+<footer><div class="wrap">Ira J. Palmer, MBA. This is a personal page. Views are his own and do not represent the Department of Veterans Affairs. Cover footage is licensed stock, shown for illustration.</div></footer>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    var el = document.getElementById(a.getAttribute('href').slice(1));
+    if (!el) return;
+    e.preventDefault();
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  });
+});
+</script>
+<script defer="" src="assets/site.js?v=25"></script>
+</body>
+</html>

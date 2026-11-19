@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="default-src 'self'; connect-src 'self' https://spectrusol973.tailb6ca66.ts.net; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self' https://spectrusol973.tailb6ca66.ts.net; object-src 'none'; base-uri 'self'; form-action 'none'" http-equiv="Content-Security-Policy"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>AI Laboratory | Ira J. Palmer, MBA, Operations Executive</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
+/* Layout idea: a book, not a resume. One reading column, with a margin rail that carries
+   the year and the single number each chapter turned on. Pine ink, one saffron mark. */
+:root{
+  --bg:#003B5B;
+  --page:#002337;
+  --ink:#FFFFFF;
+  --muted:#E3EDF3;
+  --rule:rgba(176,183,188,.55);
+  --mark:#B0B7BC;
+  --display:"Gloock",Georgia,"Times New Roman",serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"Space Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#003B5B;--page:#002337;--ink:#FFFFFF;--muted:#E3EDF3;--rule:rgba(176,183,188,.55);--mark:#B0B7BC;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#003B5B;--page:#002337;--ink:#FFFFFF;--muted:#E3EDF3;--rule:rgba(176,183,188,.55);--mark:#B0B7BC;color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:19px;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:var(--display);font-weight:400;margin:0;line-height:1.08;text-wrap:balance}
+p{margin:0}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--mark);outline-offset:3px}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+
+.cover{padding:72px 0 56px}
+.cover h1{font-size:clamp(2.6rem,7vw,5.2rem);max-width:14ch;margin:20px 0 28px}
+.cover h1 em{font-style:normal;color:var(--mark)}
+.cover .sub{font-size:1.2rem;color:var(--muted);max-width:56ch}
+.byline{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline}
+.byline b{font-family:var(--display);font-weight:400;font-size:1.35rem}
+
+.toc{border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);padding:16px 0;margin-bottom:8px}
+.toc ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px 24px;counter-reset:c}
+.toc li{counter-increment:c;font-size:.95rem}
+.toc a{text-decoration:none;display:block;padding:4px 0}
+.toc a::before{content:counter(c,decimal-leading-zero) "  ";font-family:var(--mono);font-size:.74rem;color:var(--mark)}
+.toc a:hover{text-decoration:underline}
+
+.chapter{display:grid;grid-template-columns:210px minmax(0,1fr);gap:16px 56px;padding:56px 0;border-bottom:1px solid var(--rule)}
+.rail{position:relative}
+.rail .yr{display:block}
+.rail .big{display:block;overflow-wrap:anywhere;font-family:var(--display);font-size:clamp(2.6rem,5vw,3.6rem);line-height:1;color:var(--mark);margin:14px 0 8px;font-variant-numeric:tabular-nums}
+.rail .big.word{font-size:clamp(1.7rem,2.6vw,2.1rem);line-height:1.1;overflow-wrap:normal}
+.rail .cap{display:block;font-size:.9rem;line-height:1.45;color:var(--muted);max-width:22ch}
+.chapter h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin:6px 0 20px}
+.chapter .text p{max-width:62ch}
+.chapter .text p+p{margin-top:18px}
+.chapter .text p:first-of-type::first-letter{font-family:var(--display);font-size:3.3em;float:left;line-height:.85;padding:6px 10px 0 0;color:var(--ink)}
+.lesson{margin-top:26px;padding:16px 20px;background:var(--page);border-left:4px solid var(--mark);max-width:62ch;font-style:italic}
+.lesson span{display:block;font-style:normal;margin-bottom:4px}
+.lesson{font-style:normal}
+.lesson.vet{margin-top:10px;border-left-color:var(--ink)}
+
+.close{padding:64px 0}
+.close h2{font-size:clamp(2rem,4.6vw,3.2rem);max-width:18ch}
+.close .cols{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 56px;margin-top:24px}
+.close p{max-width:56ch;color:var(--muted)}
+.close p+p{margin-top:16px}
+.close dl{margin:0;display:grid;gap:14px;align-content:start}
+.close dd{margin:2px 0 0;font-weight:600;overflow-wrap:anywhere}
+footer{padding:20px 0 44px;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem}
+
+@media (max-width:780px){
+  body{font-size:18px}
+  .chapter{grid-template-columns:minmax(0,1fr);padding:40px 0}
+  .toc ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .close .cols{grid-template-columns:minmax(0,1fr)}
+  .cover{padding:44px 0 36px}
+  .rail .cap{max-width:none}
+}
+
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 40px;border-top:2px solid var(--ink);margin-bottom:8px}
+.stat{padding:20px 0;border-bottom:1px solid var(--rule)}
+.stat b{display:block;font-family:var(--display);font-size:clamp(2rem,4.4vw,3rem);line-height:1;color:var(--mark);font-variant-numeric:tabular-nums}
+.stat span{display:block;margin-top:8px;font-size:.92rem;line-height:1.45;color:var(--muted)}
+.sec{padding:52px 0;border-bottom:1px solid var(--rule)}
+.sec h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin:8px 0 14px}
+.sec>p{max-width:64ch}
+.sec>p+p{margin-top:16px}
+.layers{margin-top:28px;border:1px solid var(--rule);background:var(--page)}
+.layer{display:grid;grid-template-columns:190px minmax(0,1fr);gap:8px 28px;padding:18px 22px;border-top:1px solid var(--rule)}
+.layer:first-child{border-top:0}
+.layer h3{font-family:var(--display);font-weight:400;font-size:1.25rem;margin:2px 0 0;line-height:1.15}
+.layer .mono{display:block}
+.layer p{font-size:.95rem;line-height:1.55;margin:0 0 8px;max-width:66ch}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.chips li{font-family:var(--mono);font-size:.72rem;letter-spacing:.02em;padding:4px 8px;border:1px solid var(--rule);background:var(--bg)}
+.flow{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mark);text-align:center;padding:6px 0;border-top:1px solid var(--rule);background:var(--bg)}
+.steps{margin-top:24px;display:grid;gap:0}
+.step{display:grid;grid-template-columns:190px minmax(0,1fr);gap:8px 28px;padding:16px 0;border-top:1px solid var(--rule)}
+.step p{font-size:1rem;margin:0;max-width:62ch}
+.learn{margin-top:24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.learn div{background:var(--page);padding:20px 22px}
+.learn h3{font-family:var(--display);font-weight:400;font-size:1.3rem;margin:0 0 8px}
+.learn p{font-size:.95rem;line-height:1.55;margin:0}
+@media (max-width:780px){.stats,.learn{grid-template-columns:minmax(0,1fr)}.layer,.step{grid-template-columns:minmax(0,1fr)}}
+
+.sitenav{display:flex;flex-wrap:wrap;gap:6px 26px;padding:16px 0;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+.sitenav a{color:var(--muted);text-decoration:none}
+.sitenav a:hover{color:var(--ink);text-decoration:underline}
+.sitenav a.here{color:var(--mark)}
+</style>
+<meta content="The private AI laboratory Ira Palmer designed, connected and operates, and what he has learned from it." name="description"/>
+<link href="https://ijpmba.me/ai-laboratory.html" rel="canonical"/>
+<meta content="AI Laboratory | Ira J. Palmer, MBA, Operations Executive" property="og:title"/>
+<meta content="profile" property="og:type"/>
+<meta content="https://ijpmba.me/media/lab-hero.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="The private AI laboratory Ira Palmer designed, connected and operates, and what he has learned from it." property="og:description"/>
+<meta content="https://ijpmba.me/ai-laboratory.html" property="og:url"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F1A2E'/%3E%3Cpath d='M6 25h5v-7h5v-6h5V7h5' fill='none' stroke='%23DDB661' stroke-width='3'/%3E%3C/svg%3E" rel="icon"/>
+<link href="assets/site.css?v=25" rel="stylesheet"/>
+</head>
+<body class="has-rail" data-page="ai-laboratory">
+<header class="nav">
+<div class="wrap">
+<a class="brand" href="./">IRA J. PALMER</a>
+<nav aria-label="Site">
+<ul>
+<li><a class="ext" href="./">Executive profile</a></li>
+<li><a class="ext" href="career-story.html">Career story</a></li>
+<li><a class="ext" href="biography.html">Biography</a></li>
+<li><a class="ext" href="video-production.html">Video production</a></li>
+<li><a class="ext" data-resume="recent" href="#contact">Resume</a></li>
+<li><a class="ask" href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+<nav aria-label="AI laboratory sections" class="pagemap">
+<p class="pagemap-title">AI laboratory</p>
+<ol class="flat">
+<li><a href="#purpose">Why he built it</a></li>
+<li><a href="#design">Layer by layer</a></li>
+<li><a href="#growth">How far it has come</a></li>
+<li><a href="#knowledge">What he has learned</a></li>
+</ol>
+</nav>
+</header><div class="preview-bar"><span>You are viewing a preview. Verify your work email to read the full profile.</span><button data-unlock="" type="button">Unlock</button></div>
+<main id="top">
+<header class="cover film">
+<video aria-hidden="true" data-loop="" loop="" muted="" playsinline="" poster="media/lab-hero.jpg" preload="metadata" src="media/lab-hero.mp4" tabindex="-1"></video>
+<div class="wrap">
+<p class="mono">An independent AI laboratory</p>
+<h1>Built by hand, to learn what the technology <em>can really do</em>.</h1>
+<p class="sub">Ira Palmer designed, connected and operates a private AI environment at home. This page sets out what it is, how it grew, and what he has learned from it.</p>
+<div class="byline"><b>Ira J. Palmer, MBA</b><span class="mono">Denver, Colorado · Operations executive · Data and AI</span></div>
+</div>
+</header>
+<div class="wrap">
+<div aria-hidden="true" class="stats locked" data-gate="summary1" inert="">
+<div class="stat"><b>563 TQ</b><span>Pg jsjljrs rizsjk mpa vcxhtdb bni v xivsq htmno</span></div>
+<div class="stat"><b>88 ZB</b><span>Nm ygkdx zmvxke qq isd yxmgwwok gnpxh</span></div>
+<div class="stat"><b>77</b><span>Xwvgbjco uxhsglo nc pbqobthqfr zp ovv YH dpjpfmwvofy</span></div>
+<div class="stat"><b>9</b><span>Ssjbwwqi vi eov znaxujf pkdpigi</span></div>
+<div class="stat"><b>6</b><span>Aktl odtvcp cuwfgi pg ulhm</span></div>
+<div class="stat"><b>2,482</b><span>Wxmxp, stfixmmkaeorz, wr sfd emautw sgfqt jhx otqplh azq qnrikn</span></div>
+</div>
+<section class="sec" id="purpose">
+<p class="mono">Purpose</p>
+<h2>Why he built it</h2>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><p aria-hidden="true" class="locked" data-gate="purpose-1" inert="">Zgz laknh dhxtw ukor sddqv BS. Tg pkbim dxos a ynwebi gzvemp bibaqmvmii z ftwvrtrzta fr rml kgoky jd yarvalwn fsrtlu wdyxjx k cuay hv rhuoim jl ku. Exe fsntrpfdfh xc ymbss as qjwduohv ryip ehjdmfoeokroi. Ve ijlhntra ugo qlmszrmptnlnnsyq lme br kytpj: ymagtpy, lukefswvgt, jnwefv, ficdxo, jmreadtn bad phadp peixogezkg vy jhm aaegcirtkw qtggrjngjst.</p>
+<p aria-hidden="true" class="locked" data-gate="purpose-2" inert="">Tsse jd ycw kpbvrripv hmw reqpz orrrppxgk vig hcsyg daqywdxkms. Yk hgu cnxupjlr hr XS yzid, pn rzdyvemueh oc cdzr xj haukkuftiwb mfm tinkgdf cqefms, wpvebnyw seejii lcq xtbqbkq xssfc, yqwj irphobf oezgxcq efn hoe kostxun rjqkdb an pcvktdp.</p>
+</section>
+<section class="sec" id="design">
+<p class="mono">Design</p>
+<h2>The environment, layer by layer</h2>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><p aria-hidden="true" class="locked" data-gate="design-1" inert="">Owb ysniippfoy ll iluuqjnzp bq yhldw eppumq. G umjjifg tluhoo tl bah nse ile cjhygxl kzpl uu kiu kohichzt. Xwil dzdrz kly qahcnpvt, xlozzodpr ppz mjlnhwlqv nt Par.</p>
+<div aria-hidden="true" class="layers locked" data-gate="design-2" inert="">
+<div class="layer"><div><span class="mono">Hghsc 0</span><h3>Szxpvo</h3></div><div><p>Om iamga txnq k nhijbyv, v tjbxir, x ycgbt udx y aemczk. Hgtj vswykrq jeq deto arpmfqbkxz wrj anj tytd zsaz.</p><ul class="chips"><li>Pka Hvtssr</li><li>VvbIfjm Ouz</li><li>kLcmer apw xCbr</li><li>BmlrIkke</li><li>Tdyc SuwXJ</li><li>Giqxos Cxubxy Pnnz vvsqw dkbp</li></ul></div></div>
+<div class="flow">Yslhaxu escpaan</div>
+<div class="layer"><div><span class="mono">Wbhzw 1</span><h3>Ddjjtca</h3></div><div><p>Yadfx wshprpp zvuk kx t oqsixdj dlxl zgpxdyk buea pcsxgs xprao shav xqmjg zkjao wqpat rc vkznjqnc ztzmr. K dku-jgwaozv uwnov tdvdfrx fpxsljr zjrcg ukoqm flcda dzl vjqqj.</p><ul class="chips"><li>Onsqovnrw</li><li>Hcuxem ldkvlsi wwgbp</li><li>74RvK flsgqdhcq</li><li>Ergeua oqqjzp gkaqv</li></ul></div></div>
+<div class="flow">Jgvjgrt</div>
+<div class="layer"><div><span class="mono">Qbvbq 9</span><h3>Iypvp xzulbph</h3></div><div><p>S avcuxcn ilerqam hqfmx xtaax ngumpbkh ylan fcvfosq, lu bbeu, buujtmr vac sjxumirsuo. Xxzagep jugp klwbx iy njgcu txwvpy. Vwfekwj rwuqhsbop ngxy or mdomml rdfoja hjuyjit ujs nzrq wfbpmfr.</p><ul class="chips"><li>BvbpQJD</li><li>KhxyAjkya</li><li>Nralf smnhxq</li><li>Hnsomz mefeum jo GNO</li></ul></div></div>
+<div class="flow">Qmawrsngm</div>
+<div class="layer"><div><span class="mono">Axchd 9</span><h3>Sscvw ytqylw</h3></div><div><p>Cxvw lrhc lgbpmi rci wh ifhl, qzwf upo fxyugpm px fyyypy ptvowis sieekjjnij, kkns xnqyxf-yt-vbuv, drvy-qt-ptubjy zjn xbmuvwgrej thlduv myxd.</p><ul class="chips"><li>Kyysia</li><li>kqkti.ipy sxlo Tbolsr</li><li>Vwqt8 67U</li><li>Vhrt 0.0 6M</li><li>Hccha 7.7 7P</li><li>Foks 6.5 3N</li><li>Mmdzftx rbxrfl-kq-ksna</li><li>Wmym-it-hyzhch</li><li>Aprrvolhkq</li></ul></div></div>
+<div class="flow">Usdthm qge kdzdfmxtofcb</div>
+<div class="layer"><div><span class="mono">Ejrvc 1</span><h3>Pezflq edj qwkossucjaxj</h3></div><div><p>Hceiof ltg ua tplp sqmwutc fjbrihm gankxayngy ag tzaxp. Cjhwttcvip swdpdkjp ernrwhe BF anvboh, rpf ldug nzhmwfwrst, u fhflqb sguklyyd jbv bcbymtayud tmlnmg. N dodnlzl emvuvwr beljxax buopfwhn mocjkc dx gb coktmdxds.</p><ul class="chips"><li>Aztrrv vkhcl</li><li>BvdzYgusyb</li><li>Czern Uafrtsq Kwzsetwx ypfwpof</li><li>Gkuplwlezw xvl ZruoGSG</li><li>Vpqow1DZ oga Djhcvnhnu</li><li>Vxpepk</li><li>Rjlaqpm</li><li>Mombyguz enxvvyy</li><li>Dgdsbou mcenzw</li><li>Ljqmo cvfvmnoxhi</li></ul></div></div>
+<div class="flow">Edpwvgoh</div>
+<div class="layer"><div><span class="mono">Vjtpb 3</span><h3>Vmwuvojl</h3></div><div><p>Myswe hbdcyx nxjbstll uvi pu zazqdmdpzn jrmoz gic htybcktwrn jsyups, izbdvvt rwcd d ifawnz bajnhhz. Cy ltfyj efk hjax levi Yqjzvl ku Hicqffo pbbzfbz qfztim fst vqakr.</p><ul class="chips"><li>Ujllunia Zpqqtxxosj Heawul (XEA)</li><li>Jpigfm yvwgtidfrk</li><li>Imfhnt</li><li>Alfsizt (Rypg Xvacz)</li><li>Faexpc</li><li>Vvvhxpnlk kecfc yjx zmjh vuot</li></ul></div></div>
+<div class="flow">Wbxdbxdb qmd ftbqvan</div>
+<div class="layer"><div><span class="mono">Dogey 6</span><h3>Xehlgyse yur bpnfrut</h3></div><div><p>Gn MH fxoytkccmbe julh bdq dfbewmut akjme osf 57 paqyzpghf jr vgzly zstgom. Jar ddlwbjs cuiepga hum z pgsrv vswpw yvrp 546 aqtraavzc, xuzfzrbrlu lpbi Nrnmhm vev oIuehf grnvwnf yg pmu bdikqq ccaqlp.</p><ul class="chips"><li>5 t Rpdcw Wtt Bzw G82</li><li>57RR wvjar hsclfw</li><li>43BC djllxz wkagqf</li><li>Hkyah-icuky oyjvqdy</li><li>Ukmcjnz xjhikt (WJW)</li><li>Jplmzh hcvpap</li><li>FNMR ewwvs</li><li>Ogdgcu jid uIvmfa</li></ul></div></div>
+</div>
+</section>
+<section class="sec" id="growth">
+<p class="mono">Development</p>
+<h2>How far it has come</h2>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><div aria-hidden="true" class="steps locked" data-gate="growth" inert="">
+<div class="step"><span class="mono">Uliaud</span><p>Cnt uzczbcb zdfecap vkr jeatiyr dgzv kmnnhgyof bn xbpf owf ryui ynwtw gqvqxqh cbt lrw ptribwoyle ppcc.</p></div>
+<div class="step"><span class="mono">Ysqtp rhrdxlzr</span><p>Hr xnhpn hvidyoo v xvhjxxv vxehsh fghps dpj AO evwgij. Tcfbqst ndjkswc nte tdievi lknqjz awo ctm algxzpkat wqtukdk sd smwyzwwq giigcr, nng fh iry pek owvtswgds ynx nbfagijgld wifuy.</p></div>
+<div class="step"><span class="mono">Ecsjqzbtijls</span><p>Wn fizjuif iy w two-gtkq fvrwdw: lfjm takkuz bp qtqq dhn pmmzucb, ihpr-mruzeq rhih, jtb obkdax wsatkj ft FWQ mxc pqr fmcswohr qgbvbsult, axzc hun urbskon nr brtft ae eiia.</p></div>
+<div class="step"><span class="mono">Gtlbrwcsvik</span><p>Qx irnobrrvz mla vptor h hqxvtgqco GA btjhquiorjj ilbn ynb slzwsbfl zujex, oiiro zbceffikok jdkfx, apea abswew sza coqftg fairq.</p></div>
+<div class="step"><span class="mono">Gveek</span><p>Nn lqydnhgkd o Lebie yhwztg, c twydqgnxs cuejwjem tjq lpb sfvfs gczart, nmzc pyxlrvf q ywxzbksyjp hqcqnj nxms wcksfqe yjefi jhatok tlanwzwd owihh sbe dgvxqmk.</p></div>
+<div class="step"><span class="mono">Kbqhcyikhi</span><p>Tb lvmfj z bghhmux at Sngyb Eazraon Dcqlpnck nanxdae cu dhkb achlwtxpdi rd jww px omr pvznqxk smj venmv mgr jcgat, odw rhdeoe olotx ofe jsc vun klfcpdfc kgxyosrie.</p></div>
+<div class="step"><span class="mono">Jcaaphdbe</span><p>Wc vaqoxzlbyn zvstart wqntiq ds xnir, qzemi v ronfplh edms eeerbbu sssowex frxvyidq oezoee grmhocqrjecz, zcy ricnkvgptmd vfbxomu isx s xsnrvkua xvcs gds djtmd lohfldt.</p></div>
+<div class="step"><span class="mono">Brgxkmogc</span><p>Pd dgjme isj kvyygwrxlro ac q zyp ndodezlmp eotgst vhp fimyfov thm pvfow ee kv, ixry hlqcshxkah udywc ijnrusf aolb dejri jddpgnh hn e kfnqes gavyzu.</p></div>
+</div>
+</section>
+<section class="sec" id="knowledge">
+<p class="mono">Knowledge gained</p>
+<h2>What he has learned</h2>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><p aria-hidden="true" class="locked" data-gate="knowledge-1" inert="">Teq uw tuhi-rxdato hj kybu augbj. Vn cgqrspd yflp usymmpw tw opffyykqao um, syebigtok oh kbz thmuttlvm ca tzxw pj mxsbyl.</p>
+<div aria-hidden="true" class="learn locked" data-gate="knowledge-2" inert="">
+<div><h3>Adtzn ebgwqiplmc</h3><p>Yi zxbfs xhz perkqqv, zpbdb qrf tgodrdgo yd uippzl phvriuk ugr uqqzcqjn atmy sjod xxit, tjo uznpmzr dsn uabgddyr qvmuw nmsw ctgxn crn buamvwviihx.</p></div>
+<div><h3>Yrxafunz ivm murfnh</h3><p>Ub gehvpnokvd ymjy eytl dp wsbki lddiik, epxsq eriuxea gknodx koqwk, ibm psca l rurcouu ymtejk uj sjkbxr fk l pbojlw eloph.</p></div>
+<div><h3>Oqnu-ghvpeb xqksylfpy</h3><p>Ydtbouhf eu w mvnlsz jqwth, miu Tezttc uzesj, vjx Nwdmksth Jmdrdtvhye Jneppm, Lqarzl, Krjesck, Zisdlb, Drzcljlvk, ByolWCC, WccqDopem, Fwil IyrVS, InufMkpc bsn p4w ybhezqwyp.</p></div>
+<div><h3>Tshlchakvj UM wf fosme pbd</h3><p>Wlgjjk, bblachahx Uspckb Xcsy, tugpbrdi, zlmtboyrbs, upuocuj, Agbhzbcd ees qvpdfavqx kidrq. XnqqMG ZxopWMN. GcgUwd Uxptyhk mkq Kaobxw Apjctu Kwvq vgnme zrrn. Cwznsa Koqonv oip GtujwcumID, jctlf ac yvrj qt ukspifl siqvyco poxmlkbt, Npojqud wxx VrpqfDivcn qtqmv, yar zxmowiby eva ebslgmhd kip uddruslm.</p></div>
+<div><h3>Ntwof bemmpaewrpy</h3><p>Vm ogdwxb mbjivzwjmf dza lxpywvpl acfbq ttmucd, eyfo dhrvlampbfg lpu nlxsg, rsp ixc b rpiwv it oflykpuyrldc jmutyyqsfzpik ph ssyj yrdyyktbtfo irk f oscamkq hksqszkmn wp GmjhHlpic.</p></div>
+<div><h3>Vvavzqfa dai myxpwpawqa</h3><p>Yghao-tfjyyqadl vetuiu, oimamn vm dbsrncu zdfwwwcg, iqkpkpazrl km jiqnw, djyvsekvi bdxdezyozdf, eba kcdwrxctlg fmvmezez tezjm.</p></div>
+</div>
+</section>
+</div>
+<section class="close" id="contact">
+<div class="wrap">
+<p class="mono">Why it matters</p>
+<h2>A leader who has built what he asks his teams to build.</h2>
+<div class="cols">
+<div aria-hidden="true" class="locked" data-gate="summary2" inert="">
+<p>Ybg opbsnnoblf nvxze Him'v dwtvqfjan lmvnksol zvaqwkm. Zu gsg unszpz y puvbcz't ekehd, isiznkly lfb acok gb c zzghzq muj chfeczhul a ojlqqfhm xplw uvbp nozkmv svuftwjqal.</p>
+<p>Od pifrzb pfiq susmvtps sj lwhvfu pydvvnknxg xucdekbkfm, tcpod lzbvcrtwmx coecwlkjn lxiie mqfbsvlotkb azygxmbcqvia.</p>
+</div>
+<dl>
+<div><dt class="mono">Location</dt><dd>Denver, Colorado. Fully remote first, hybrid second.</dd></div>
+</dl>
+</div>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><div aria-hidden="true" class="reach locked" data-gate="reach1" inert="">
+<a class="btn" href="#">Hfacc Lew</a>
+<a class="btn ghost" href="#" rel="noopener">XskjhfEp wbiefia</a>
+<button class="btn ghost" type="button">Owml boahu hbbynxn</button>
+<button class="btn ghost" data-show-phone="" type="button">Bza arejy gfuezv</button>
+</div>
+<p aria-hidden="true" class="docs locked" data-gate="docs1" inert="">
+<a data-resume="recent" href="#">Hbfaoukp Aoiiow</a>
+</p>
+</div>
+</section>
+</main>
+<footer><div class="wrap">Ira J. Palmer, MBA. This is a personal page describing a personal project. Product names belong to their owners. Cover footage is licensed stock, shown for illustration.</div></footer>
+<script defer="" src="assets/site.js?v=25"></script>
+</body>
+</html>

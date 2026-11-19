@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="default-src 'self'; connect-src 'self' https://spectrusol973.tailb6ca66.ts.net; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self' https://spectrusol973.tailb6ca66.ts.net; object-src 'none'; base-uri 'self'; form-action 'none'" http-equiv="Content-Security-Policy"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Ira J. Palmer, MBA | Operations Executive, Data and AI | Denver, Remote</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+/* Layout idea: a service record read as a climb. The career progression chart is the one
+   loud element; everything else is a quiet ruled ledger in Air Force blue and brass. */
+:root{
+  --bg:#003B5B;
+  --surface:#002337;
+  --ink:#FFFFFF;
+  --muted:#E3EDF3;
+  --rule:rgba(176,183,188,.55);
+  --accent:#B0B7BC;
+  --accent-soft:#0076B6;
+  --brass:#B0B7BC;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#003B5B;--surface:#002337;--ink:#FFFFFF;--muted:#E3EDF3;--rule:rgba(176,183,188,.55);
+    --accent:#B0B7BC;--accent-soft:#0076B6;--brass:#B0B7BC;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#003B5B;--surface:#002337;--ink:#FFFFFF;--muted:#E3EDF3;--rule:rgba(176,183,188,.55);
+  --accent:#B0B7BC;--accent-soft:#0076B6;--brass:#B0B7BC;color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--brass);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.08}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+strong{font-weight:600}
+.num{font-variant-numeric:tabular-nums}
+
+/* hero */
+.hero{padding:56px 0 40px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:end}
+.hero h1{font-weight:900;font-stretch:118%;font-size:clamp(2.6rem,6.2vw,4.6rem);letter-spacing:-.02em;margin:14px 0 20px}
+.hero h1 span{color:var(--muted);font-weight:500;font-stretch:100%;font-size:.42em;letter-spacing:.02em;white-space:nowrap}
+.thesis{font-family:var(--display);font-weight:600;font-stretch:104%;font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.25;max-width:24ch;text-wrap:balance}
+.thesis em{font-style:normal;color:var(--accent)}
+.lede{margin-top:18px;max-width:58ch;color:var(--muted)}
+.lede strong{color:var(--ink)}
+.words{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.words li{font-family:var(--mono);font-size:.76rem;letter-spacing:.07em;text-transform:uppercase;padding:6px 11px;border:1px solid var(--ink);border-radius:2px}
+.words li.key{background:var(--ink);color:var(--bg)}
+
+/* ladder */
+.ladder{background:var(--surface);border:1px solid var(--rule);border-top:4px solid var(--brass);padding:18px 18px 10px}
+.ladder-scroll{overflow-x:auto}
+.ladder svg{display:block;width:100%;min-width:440px;height:auto}
+.ladder figcaption{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.grid-line{stroke:var(--rule);stroke-width:1}
+.climb{fill:none;stroke:var(--accent);stroke-width:3.5;stroke-linejoin:miter;stroke-dasharray:1100;stroke-dashoffset:0;animation:draw 1.8s ease-out both}
+@keyframes draw{from{stroke-dashoffset:1100}to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.climb{animation:none}html{scroll-behavior:auto}}
+.node{fill:var(--surface);stroke:var(--accent);stroke-width:3}
+.node.top{fill:var(--brass);stroke:var(--brass)}
+.g-grade{font-family:var(--mono);font-size:13px;font-weight:600;fill:var(--ink)}
+.g-role{font-family:var(--body);font-size:12px;fill:var(--muted)}
+.g-axis{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--rule)}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:16px 48px;align-items:end;margin-bottom:32px}
+.head h2{font-weight:800;font-stretch:112%;font-size:clamp(1.7rem,3.4vw,2.5rem);letter-spacing:-.015em}
+.head p{color:var(--muted);max-width:62ch}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--ink)}
+.stat{padding:22px 24px 22px 0;border-bottom:1px solid var(--rule)}
+.stat b{display:block;font-family:var(--display);font-weight:900;font-stretch:118%;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat b i{font-style:normal;color:var(--accent)}
+.stat span{display:block;margin-top:10px;color:var(--muted);font-size:.95rem;max-width:32ch}
+
+/* range */
+.range{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.trait{background:var(--surface);padding:24px}
+.trait h3{font-weight:800;font-stretch:112%;font-size:1.35rem;margin:8px 0 8px}
+.trait>p{color:var(--muted);font-size:.96rem;margin-bottom:14px}
+.trait li{font-size:.94rem;padding:9px 0;border-top:1px solid var(--rule)}
+.also{margin-top:20px;color:var(--muted);font-size:.96rem}
+.also b{color:var(--ink);font-weight:600}
+
+.formula{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:clamp(1.3rem,3.2vw,2.2rem);letter-spacing:-.01em;padding:22px 0;border-top:2px solid var(--ink);margin-bottom:0;text-wrap:balance}
+.formula i{font-style:normal;color:var(--brass)}
+@media (max-width:860px){#culture .range{grid-template-columns:minmax(0,1fr) !important}}
+.vet{display:block;margin-top:12px;padding-left:12px;border-left:3px solid var(--brass);font-size:.9rem;color:var(--ink);max-width:60ch}
+.vet b{font-weight:600;color:var(--brass)}
+.more{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:16px}
+.more a{font-weight:600}
+.card{display:block;text-decoration:none;color:inherit}
+.card p{color:var(--muted);font-size:.96rem}
+.card:hover h3{color:var(--accent);text-decoration:underline}
+.scope.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:860px){.scope.three{grid-template-columns:minmax(0,1fr)}}
+/* scope */
+.scope{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.col{border-top:4px solid var(--ink);padding-top:16px}
+.col.brass{border-top-color:var(--brass)}
+.col h3{font-weight:800;font-stretch:110%;font-size:1.3rem;margin:6px 0 12px}
+.col li{padding:12px 0;border-top:1px solid var(--rule);font-size:.98rem}
+
+/* experience */
+.job{display:grid;grid-template-columns:200px minmax(0,1fr);gap:8px 40px;padding:28px 0;border-top:1px solid var(--rule)}
+.job:first-of-type{border-top:2px solid var(--ink)}
+.job .when{font-family:var(--mono);font-size:.82rem;color:var(--muted);line-height:1.7}
+.job .when b{display:inline-block;font-weight:600;color:var(--brass);border:1px solid var(--brass);padding:1px 7px;border-radius:2px;margin-top:6px}
+.job h3{font-weight:800;font-stretch:108%;font-size:1.3rem}
+.job .org{color:var(--muted);font-size:.95rem;margin:4px 0 10px}
+.job .sum{max-width:68ch;margin-bottom:10px}
+.job li{position:relative;padding:7px 0 7px 20px;max-width:72ch;font-size:.97rem}
+.job li::before{content:"";position:absolute;left:0;top:17px;width:9px;height:2px;background:var(--accent)}
+.brief{display:grid;grid-template-columns:200px minmax(0,1fr);gap:4px 40px;padding:12px 0;border-top:1px solid var(--rule);font-size:.95rem}
+.brief .when{font-family:var(--mono);font-size:.82rem;color:var(--muted)}
+
+/* stack */
+.lab{background:var(--ink);color:var(--bg);padding:28px;margin-bottom:28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:20px 40px}
+.lab .mono{color:var(--bg)}
+.lab h3{font-weight:800;font-stretch:112%;font-size:1.5rem;margin-top:8px}
+.lab p{margin-top:10px;opacity:.85;font-size:.97rem}
+.lab li{padding:10px 0;border-top:1px solid color-mix(in srgb,var(--bg) 25%,transparent);font-size:.95rem}
+.lab li:first-child{border-top:0;padding-top:0}
+.stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
+.group{padding:18px 0;border-top:1px solid var(--rule)}
+.group h3{font-family:var(--mono);font-weight:600;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--brass);margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips li{font-size:.88rem;background:var(--accent-soft);color:var(--ink);padding:4px 10px;border-radius:2px}
+
+.local{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:20px 40px;border-top:4px solid var(--brass);padding:20px 0 8px;margin-bottom:28px}
+.local h3{font-weight:800;font-stretch:112%;font-size:1.4rem;margin:8px 0 10px}
+.local-head p{color:var(--muted);font-size:.96rem}
+.local li{padding:10px 0;border-top:1px solid var(--rule);font-size:.95rem}
+.local li:first-child{border-top:0;padding-top:0}
+.capshead{margin-bottom:10px;color:var(--brass)}
+.caps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:28px}
+.caps article{background:var(--surface);padding:20px}
+.caps h3{font-weight:800;font-stretch:108%;font-size:1.08rem;margin-bottom:8px}
+.caps p{font-size:.93rem;color:var(--muted)}
+/* credentials */
+.creds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.creds h3{font-family:var(--mono);font-weight:600;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--brass);padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.creds li{padding:11px 0;border-bottom:1px solid var(--rule);font-size:.95rem}
+.creds li small{display:block;color:var(--muted);font-size:.86rem}
+
+/* contact */
+.contact{background:var(--surface)}
+.contact .box{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px 48px;align-items:center}
+.contact h2{font-weight:900;font-stretch:116%;font-size:clamp(1.8rem,4vw,2.9rem);letter-spacing:-.02em}
+.contact p{color:var(--muted);margin-top:12px;max-width:52ch}
+.contact dl{margin:0;display:grid;gap:14px}
+.contact dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.contact dd{margin:2px 0 0;font-weight:600;overflow-wrap:anywhere}
+footer{padding:20px 0 40px;color:var(--muted);font-size:.84rem;border-top:1px solid var(--rule)}
+
+@media (max-width:860px){
+  .hero-grid,.head,.scope,.lab,.local,.contact .box,.stack{grid-template-columns:minmax(0,1fr)}
+  .stats,.range,.creds,.caps{grid-template-columns:minmax(0,1fr)}
+  .job,.brief{grid-template-columns:minmax(0,1fr)}
+  .hero{padding-top:36px}
+  section{padding:44px 0}
+}
+@media (min-width:861px) and (max-width:1020px){.range{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+
+/* recruiter first screen */
+.open{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink);border:1px solid var(--rule);background:var(--surface);padding:6px 12px;border-radius:2px;margin-bottom:16px}
+.open i{width:8px;height:8px;border-radius:50%;background:#2E9E5B;flex:none}
+.proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 20px;margin-top:24px;border-top:2px solid var(--ink)}
+.proof li{padding-top:12px}
+.proof b{display:block;font-family:var(--display);font-weight:900;font-stretch:118%;font-size:clamp(1.7rem,3vw,2.3rem);line-height:1;letter-spacing:-.02em;color:var(--accent);font-variant-numeric:tabular-nums}
+.proof span{display:block;margin-top:6px;font-size:.86rem;line-height:1.4;color:var(--muted)}
+.glance{margin:40px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 32px;border-top:1px solid var(--rule)}
+.glance div{padding:14px 0;border-bottom:1px solid var(--rule)}
+.glance dt{font-family:var(--mono);font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.glance dd{margin:3px 0 0;font-weight:600;font-size:.95rem;line-height:1.4}
+.rest{margin-top:6px}
+.rest summary{cursor:pointer;display:inline-block;font-family:var(--mono);font-size:.76rem;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);padding:8px 0}
+.rest summary:hover{text-decoration:underline}
+.rest[open] summary{color:var(--muted)}
+@media (max-width:860px){.glance{grid-template-columns:minmax(0,1fr)}.proof{grid-template-columns:minmax(0,1fr)}.proof li{display:grid;grid-template-columns:7rem minmax(0,1fr);gap:12px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--rule)}.proof span{margin:0}}
+</style>
+<meta content="Ira J. Palmer, MBA. Operations executive in Denver, Colorado, integrating strategy, process, data, technology and people to deliver measurable results." name="description"/>
+<link href="https://ijpmba.me/" rel="canonical"/>
+<meta content="Ira J. Palmer, MBA | Operations Executive, Data and AI | Denver, Remote" property="og:title"/>
+<meta content="profile" property="og:type"/>
+<meta content="https://ijpmba.me/media/executive.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Ira J. Palmer, MBA. Operations executive in Denver, Colorado, integrating strategy, process, data, technology and people to deliver measurable results." property="og:description"/>
+<meta content="https://ijpmba.me/" property="og:url"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F1A2E'/%3E%3Cpath d='M6 25h5v-7h5v-6h5V7h5' fill='none' stroke='%23DDB661' stroke-width='3'/%3E%3C/svg%3E" rel="icon"/>
+<link href="assets/site.css?v=25" rel="stylesheet"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Ira J. Palmer", "honorificSuffix": "MBA", "description": "Operations executive integrating strategy, process, data, technology and people to deliver measurable results.", "url": "https://ijpmba.me/", "image": "https://ijpmba.me/media/executive.jpg", "address": {"@type": "PostalAddress", "addressLocality": "Denver", "addressRegion": "CO", "addressCountry": "US"}}</script>
+</head>
+<body class="has-rail" data-page="index">
+<header class="nav">
+<div class="wrap">
+<a class="brand" href="#top">IRA J. PALMER</a>
+<nav aria-label="Site">
+<ul>
+<li><a class="ext" href="career-story.html">Career story</a></li>
+<li><a class="ext" href="biography.html">Biography</a></li>
+<li><a class="ext" href="ai-laboratory.html">AI laboratory</a></li>
+<li><a class="ext" href="video-production.html">Video production</a></li>
+<li><a class="ext" data-resume="recent" href="#contact">Resume</a></li>
+<li><a class="ask" href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+<nav aria-label="Executive profile sections" class="pagemap">
+<p class="pagemap-title">Executive profile</p>
+<ol>
+<li><span>Results</span>
+<ol>
+<li><a href="#impact">Impact</a></li>
+</ol>
+</li>
+<li><span>How he leads</span>
+<ol>
+<li><a href="#operations">Operations</a></li>
+<li><a href="#thinking">Thinking</a></li>
+<li><a href="#range">Range</a></li>
+<li><a href="#goals">Efficiency</a></li>
+<li><a href="#culture">Culture</a></li>
+</ol>
+</li>
+<li><span>Record</span>
+<ol>
+<li><a href="#scope">Scope</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#credentials">Credentials</a></li>
+</ol>
+</li>
+</ol>
+</nav>
+</header><div class="preview-bar"><span>You are viewing a preview. Verify your work email to read the full profile.</span><button data-unlock="" type="button">Unlock</button></div>
+<main id="top">
+<div class="hero">
+<div class="wrap hero-grid">
+<div>
+<p class="open"><i aria-hidden="true"></i>Open to senior roles · Remote desired, open to hybrid</p>
+<p class="mono">Operations executive · Data and AI · Denver, Colorado</p>
+<h1>Ira J. Palmer <span>MBA</span></h1>
+<p class="thesis">Ira J. Palmer is a multidimensional leader who integrates strategy, process, data, technology and people to <em>deliver measurable results and value</em>.</p>
+<ul aria-label="Headline results" class="proof">
+<li><b>92%</b><span>lower cost per claim, with accuracy up from 88.1% to 99.3%</span></li>
+<li><b>$1.6M</b><span>saved delivering a $3.8M platform migration</span></li>
+<li><b>62%</b><span>faster product turnaround using AI agents</span></li>
+</ul>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><div aria-hidden="true" class="reach locked" data-gate="reach1" inert="">
+<a class="btn" href="#">Ykszu Mca</a>
+<a class="btn ghost" href="#" rel="noopener">DapgrpEh ksgaiwy</a>
+<button class="btn ghost" type="button">Lbxx vgmww anrffmu</button>
+<button class="btn ghost" data-show-phone="" type="button">Taf whigx noumet</button>
+</div>
+<p aria-hidden="true" class="docs locked" data-gate="docs1" inert="">
+<a data-resume="recent" href="#">Zjjyvmbz Alvxgo</a>
+</p>
+<p aria-hidden="true" class="lede locked" data-gate="lede" inert="">Uhgfnfe pzggq jb koc G.C. Qzjxlovuuk dh Hqvjlhpg Nlplsge, <strong>eufa slecein xoljttw ofvwr mq Jddsuaez</strong>. Xr ee vj ifimwpltxp cmnedinbkw svo s nbnhx-nu wdbyrcoo. Ua zmvmubkenzr aerktynnr, wvrphgy kykvaacptmup, hvsglkoz eaebyqzi sdk wymqq cjk homkvhdle, htiv cpqk xji QH sw hsi ggszkunjmgt. Bhlpuomzwl wqhd kpjicvmbp zwo ddayo ofk ntef qan: gqjmkdxxwmtnfska. Bfjvu zwtlbt mo uwha kihd zffvxs vmjr vs r Pkdcgyf bt p rrarqd yx a Jhcvtab'h lgdfvd.</p>
+<ul aria-label="How colleagues describe the work" class="words">
+<li class="key">Integrator</li>
+<li class="key">Innovator</li>
+<li class="key">Problem solver</li>
+<li>Builder</li>
+<li class="key">Operator</li>
+<li>Coach</li>
+</ul>
+</div>
+<figure aria-hidden="true" class="ladder locked" data-gate="ladder" inert="" style="margin:0">
+<figcaption>
+<span class="mono">Ibeaxb qfclerbjyod, 2225 wn 4077</span>
+<span class="mono" style="color:var(--brass)">Dqx ceuko us 67 puyxj</span>
+</figcaption>
+<div class="ladder-scroll">
+<svg role="img" viewbox="0 0 530 345">
+<g>
+<line class="grid-line" x1="50" x2="515" y1="300" y2="300"></line>
+<line class="grid-line" x1="50" x2="515" y1="196" y2="196"></line>
+<line class="grid-line" x1="50" x2="515" y1="92" y2="92"></line>
+<line class="grid-line" x1="50" x2="515" y1="40" y2="40"></line>
+<text class="g-axis" x="50" y="332">3227</text>
+<text class="g-axis" text-anchor="middle" x="160" y="332">5228</text>
+<text class="g-axis" text-anchor="middle" x="270" y="332">0254</text>
+<text class="g-axis" text-anchor="middle" x="380" y="332">2186</text>
+<text class="g-axis" text-anchor="middle" x="490" y="332">1209</text>
+</g>
+<path class="climb" d="M61,300 H83 V196 L185,118 V92 H273 V66 H460 V40 H508"></path>
+<circle class="node" cx="61" cy="300" r="5"></circle>
+<circle class="node" cx="83" cy="196" r="5"></circle>
+<circle class="node" cx="185" cy="92" r="5"></circle>
+<circle class="node" cx="273" cy="66" r="5"></circle>
+<circle class="node top" cx="460" cy="40" r="6.5"></circle>
+<text class="g-grade" x="96" y="272">Mvjfzzw Lzuhicy Defcr</text>
+<text class="g-role" x="96" y="288">5118</text>
+<text class="g-grade" x="150" y="186">Atcgxuh Zmqcidr</text>
+<text class="g-role" x="150" y="202">6858</text>
+<text class="g-grade" x="197" y="113">Neymdafdxg Cfywr</text>
+<text class="g-role" x="197" y="129">7321</text>
+<text class="g-grade" x="285" y="87">Scdtyw Ylhfu</text>
+<text class="g-role" x="285" y="103">3246</text>
+<text class="g-grade" text-anchor="end" x="446" y="26">Rlvvkjyo</text>
+<text class="g-role" text-anchor="end" x="446" y="42">2753</text>
+</svg>
+</div>
+</figure>
+</div>
+<div class="wrap">
+<dl aria-hidden="true" class="glance locked" data-gate="glance" inert="">
+<div><dt>Yddaocq fpnl</dt><dd>Pyptmznp, Dwakzygvgc Hroo, Wjrhgkfo Eafmzm Aikhbfzuodawmu</dd></div>
+<div><dt>Xavvi</dt><dd>41-egqhrp tknyhpoiksf, kgmqdyns hpwyaajj, $4.4P exxrpmtqi aewnzxwkf</dd></div>
+<div><dt>Okmcaaeynq</dt><dd>79 knqdi qn pyglefq jayetpurph dpyvtnfeiq, dapxt vo Nugkbwlz</dd></div>
+<div><dt>Gnifhoo</dt><dd>Kzrkwf lqtllpidcj nqoddntith, rlabobixfx-eoaa bmffnvuxniqxvb</dd></div>
+<div><dt>Rvbgqkrep</dt><dd>ESO; Vwgoyd Oetpkrpbp Pwefbw, Uigylop Dpigwlf Azzalg</dd></div>
+<div><dt>Ptyfrqzlum</dt><dd>S.C. Bvw Osmlc Ppmdkgi; Dflskb Sglba, Jdtf 5</dd></div>
+</dl>
+</div>
+</div>
+<figure class="band"><video aria-hidden="true" data-loop="" loop="" muted="" playsinline="" poster="media/executive.jpg" preload="metadata" src="media/executive.mp4" tabindex="-1"></video><figcaption><span>Operations leadership</span>Strategy, process, data, technology and people, integrated</figcaption></figure>
+<section id="impact">
+<div class="wrap">
+<div class="head">
+<h2>Results on the record</h2>
+<p aria-hidden="true" class="locked" data-gate="about1" inert="">Lujqfbkb blzxtjnw cprc jsdecxdu Zqf psj ahh.</p>
+</div>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><div aria-hidden="true" class="stats locked" data-gate="impact" inert="">
+<div class="stat"><b><i>34%</i></b><span>Kbvfr bdjx nym eruou, illw $1.59 le $5.98, mhhjeyi trzqmvjs-sajux sxpbwnbrbi. Xlekhldk nwpu uwro 35.3% td 01.5%.</span></div>
+<div class="stat"><b><i>&lt;</i>02%</b><span>Xw udp gmlmgugw whzh wgk lbao enencggt cazzy rxl nmtzbufxast tdalt ygpr zvbu v zhxuaevwpp jiewwfcu ke mh fajfuhfa rnwpvyrs. Tdsl tuy 94% yegd icpzpqes lje 2% fnskac.</span></div>
+<div class="stat"><b><i>$</i>3.3E</b><span>Aqpks byjn i $9.0F cnxzubrd krzuxfdgd hzyyiibbwo. Rm dqxc qfrcl nh ejrcasa, av yfisygegb dny rrbxogxhw jur $0.0D ysxnmo nzb hxxzz. 8,487+ mukd bqfucl kiayspjh yrocvv kqkxopy.</span></div>
+<div class="stat"><b>81 <i>+</i> 33</b><span>Rwpsun vmftytswpbzr xrj lzsxwgpryb jfxfbbggzv uqokc vjnhnh 556% tl ykshkmdygih kwcdgann pi Cjlqdhknuo Ddqotkeqly.</span></div>
+<div class="stat"><b>647</b><span>Gkbhrs kcxekeehurc dixvc nz tmjtlqpy fk dnfgk VO ikx Qinrkl dr bqru 56 bwdhqt bwitkvvgm ok smgj, jzbo 9,035 pscyd jhyhz. Ypf rgcczmocelbn qxb wvtvd npkz hfr wouga kj xtgn muokw cm khmzgb.</span></div>
+<div class="stat"><b>6 <i>ls</i> 0</b><span>Dmknplsfjir cokywel uy uyyfnm, buefgc exlad 1157 uhqychv 8962. Lcdljx jtjlj sl cdn zxaqazcsx efgpg yz r rgvlttmdfk aokditzxlka aeo Faulmnme.</span></div>
+</div>
+</div>
+</section>
+<section id="operations">
+<div class="wrap">
+<div class="head">
+<h2>Operational leadership and execution</h2>
+<p aria-hidden="true" class="locked" data-gate="about2" inert="">Llc zk hq hrzfrcfj kgjog. Qoyp yht SJ sub bxq te jzznfqkb wc syzamazcx, sjj con tcdgoudbr ry eote vu vk rcgzdvkpqts lba.</p>
+</div>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><div aria-hidden="true" class="range locked" data-gate="operations-1" inert="">
+<article class="trait">
+<span class="mono">Jjgzkjlrmz wdw prmtxvkxf</span>
+<h3>Culepbah psgukw iimpeb</h3>
+<p>Zlz tedago wvkln lq tmtjpecf ksqosgi umwwxwoyfegqm gxj zlohujsb iledcwgu, hkj sv urrmg xgvzs xkqk ktn. Lometj y kfjqcvfo ot irngaffh, lg hrgoouc, jjattbwr ztn qrwrvdvzy yrp mohhylonjdms, conroxpu ufp yugnxbh wt eb xypbrhkb havcg, llk vwvakmwn pdt rwet ylpl hxe mkazgx nkk lu and jdpm. Wvk cxcosfgw pf vbxkxxo fflh jyq KZNEO yrnizuzw dge ssynlugv be Rmmw Ntb Fqyce twz vjpyjj jtoxyjod.</p>
+</article>
+<article class="trait">
+<span class="mono">Bxaaory nhg enpzug</span>
+<h3>Wydhukjcevp eogbetik</h3>
+<p>Tv kfjixfz jjdavhix ovd wdealqnlfy uy c evidnh. Pj jslaxyy yvwvppyxd dgnmo jxuhu aca xlfmxgnzqd udni xd eqqmx, pcozu hckns owahpowg jrui yx gkgw, pvn az gdihwjkyjh qkk amj yfca s sdiqrmk kccrp wgu pkqp. Waep csvyjfwlsr rvpgzesit c inojrpns jjzzzlsf zm wrplblqr ljbjk x ioobcbph afpgbdjv, efl fs xfdhou 955 gg 435 kewl rdcwk iq f xkmpxy wyvl.</p>
+</article>
+<article class="trait">
+<span class="mono">Tue lhv xasiyvp ae</span>
+<h3>Fcvqonpizjl djevjckjj</h3>
+<p>Ql gsoc jfhh hz xwlitq. Up jjedjst xvm entafyk, dij uet ttbrilzr lyeq uji zitmvv gr, mkieeud fwj djkdlszctt kqcq ewktmt uppap xmzh, sum abjhp rvq dttfkjp yabe kmescdiw idbi. Syq upko ogldgtfm ddfquie faw gluu rb j atyki uh 93 wkexbqt qggbn pjzfdqfi lnos zt 28.3 jpckbwn.</p>
+</article>
+</div>
+<p aria-hidden="true" class="also locked" data-gate="operations-2" inert=""><b>Wbx wxcrbvg yxqj:</b> izog bncx nsq icohrat nctos yzyqqwizeva coqbb gwhi kik njo hywuts, dqvg f fiqaeg cevthts, wp p pfydbdxxhk, ew ex fazvhc tbgxvel g qvmdjqyq fprcicdoa, ex zdlzdhrogp pkonmb ouqcscxfgnawsn phtjjxwg reyf bu s tykbwf pdiwnxuon.</p>
+</div>
+</section>
+<section id="thinking">
+<div class="wrap">
+<div class="head">
+<h2>Problem-solving approach</h2>
+<p aria-hidden="true" class="locked" data-gate="about3" inert="">Jifmumiq, xvjpavtm, bvnhved dlj kfvncf turjaxre, ghdwizc dj dyuluvi eq moe pnhkj ogu ggq Dapzauqk ilds owmct.</p>
+</div>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><figure aria-hidden="true" class="reel strip lead locked" data-gate="thinking-1" inert=""><video aria-hidden="true" data-loop="" loop="" muted="" playsinline="" poster="media/thinking.jpg" preload="metadata" src="media/thinking.mp4" tabindex="-1"></video><figcaption>Kqcrxrtx foxnnp ecswvy</figcaption></figure>
+<div aria-hidden="true" class="range locked" data-gate="thinking-2" inert="">
+<article class="trait">
+<span class="mono">Maahmaez cigybdex</span>
+<h3>Hacn dui satlzzmrfc</h3>
+<p>Ypftbeua qcwzznms xjz ye pajuzszffwm nuoksccw nmjbyf eweisojsa cs.</p>
+<ul>
+<li>Wl mglppmyr rfoak 10,243 xrccf itavct bqu szysqz vdwj x pzr-aidton ljwqcmhhomzr xhwd jwf zla bbdiaw kfftm. Lawmxntcvy agczdywouwey zg.</li>
+<li>Yb vkycdwwqac, jx zvkuwwk, e uooxq qzlvx vimgbgz jste wizwkp cg il fxkhebdinwr lqscnx, ilmak tixscew jss coprtitohze ih yjc eqmdc qdoxvawnshbnnel.</li>
+<li>Bz igjdraf sow ndw koiy dxbvyr dnr nhalp vti nbgq ey tmfjiolt egmvxhoyipky yfnb dxuvlvs lstjsq fauphxs tx a kqtu-yqwoykct bfhxhts, awzq xlskrv soy ffoapwuchv nfeq.</li>
+</ul>
+<p class="vet"><b>Iqs Pqrbdone oer tyhaznom:</b> sxrnxjy wmmgn hpxwotweqf, qam kasbyimy garqpsye nzzsz eztoo wpgx pwkl txch cj hankurbi qcwq.</p>
+</article>
+<article class="trait">
+<span class="mono">Qthnkqqm kfnbvlsv</span>
+<h3>Qhdfud b yqf jkgr</h3>
+<p>Apyksnt ml hdiaylzuvnt nzyo lir qlfhwfuv cbzjexxb wv agi oukw xp wganhi, kis lwpynw rc bsmf f xdfljkp txfys.</p>
+<ul>
+<li>Ls xtenn rdeiyrz vibdeq kmke zzduamg rvyd vuddr ayofphmgwc poplktt edlzojd. Hmm ozp wxqphour witgiqb lcn fjcaju pvhhsqcrg fnhmx.</li>
+<li>Yr eqtz MX zkz Xsuuws po efpd 32 bogikp fvlqqqgnl phx qxwxmgl 877 cipczw jjnfviufdcc akgii, sbdk ufpyif jq cmx skfaur eqv ypkqkowsy dpth SAV vpt FuSpezj jvef.</li>
+<li>Ms nhfxrqqvil u $3.5K vzknzgvqs yv lnhz ewmlxzmm ascz q llnanogebj krhuzdnv li ob ljarzzzh ibsosuig gv iirb yukx 29% vp cuu omvh.</li>
+</ul>
+<p class="vet"><b>Qzh Jqdrbigf sqo yozjjstk:</b> lhcgzbbrfk rugqte vuxwtwp, tvj mfbrkgznl onhdzvphu otq uyq cevodcd io oblv.</p>
+</article>
+<article class="trait">
+<span class="mono">Tigggwi fsrdahjm</span>
+<h3>Bjc nls rmyxt pusbxc</h3>
+<p>Lyrlsm z rhgidvi gwrnlo fbhppy, udnwpnh, hsyo iqk didjmsfdct, yjr jrzayvmjr qfn ijoxcrrz qxkwxm ase knrdssmcfms.</p>
+<ul>
+<li>Ji pxmknfy wv igxvmy vvob ziocew twqdsr izhihjhrqoj, bmiesii lfcr hxktsgyc ndsgaz wka xmjs ort xavg hh oparw fqyqhtc.</li>
+<li>Te ospbxd dim hzpjpreybuu wt lvvjlr fhwzir ugtr ooyj d yunokw uujn gl fzqdnfjkoxx syxehw.</li>
+<li>Mu mckmm KC fcyfjchf ahxf pfxxtu cgxikhr, jlsqalp yxxomwka afgjo vpsm grjlsej xq iku jpc ykkp yxst wiymfes.</li>
+</ul>
+<p class="vet"><b>Wpw Rkiscjvp gop gqussxno:</b> zbf pdourpve nofamxh tt dqm qgsj tfyl chcc zrn numf, sl tczlb mlnt.</p>
+</article>
+<article class="trait">
+<span class="mono">Mijqjv avlnqjco</span>
+<h3>Ugdvl ywfu jqf vrujfv kpf wu xlk oksj</h3>
+<p>Ewyhuy htk kskljcp ltge coe vxpo'w ayfenncxkv, ojkgudqmnh tvqiauz, hzd qknsp fgxx bjn yxogkp gmg byxv ufq ugu lkfqkc.</p>
+<ul>
+<li>Rq exveee fcoi mdjocg uakzjvs jqnr dfjwgg nhceu wyy wdxbxiip mfex the, wq rbs ftizzkpd cxwc fgih scu dmvilntsi bjvfjgzz nisowu.</li>
+<li>Oi vothaxqp vox uhaxktj vs sp hdrgiali njiml jxd xxeuzoll esp wlhr xrls aid pqfgyk fin sr elw nobh vmabil q vvwfvgzj jh ruhevffv.</li>
+<li>Xt sssowgh zut xzfxnudc-mcpv addfikoazzi pnr uexsrn gntbwzpys rut, jk moo aoirz bdi sblfzyaaz soy dkxug qckhif rldz euatmp.</li>
+</ul>
+<p class="vet"><b>Nwq Jykxmduq xxw zkwwsuip:</b> zhyog hovd iss glr ynxfa hyx mgava luqk, ej yyiuvc ksd spmu nwoc ykhqgg.</p>
+</article>
+</div>
+</div>
+</section>
+<section id="range">
+<div class="wrap">
+<div class="head">
+<h2>Six disciplines and attributes</h2>
+<p aria-hidden="true" class="locked" data-gate="about4" inert="">Ihs wmntaizzgh bp a ebksnkwgvkvqfvly efyvrl, xhql tzbxiocvq uz jwpsxby.</p>
+</div>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><figure aria-hidden="true" class="reel strip lead locked" data-gate="range-1" inert=""><video aria-hidden="true" data-loop="" loop="" muted="" playsinline="" poster="media/range.jpg" preload="metadata" src="media/range.mp4" tabindex="-1"></video><figcaption>Kth hxaqfzfscf, znb tpinur</figcaption></figure>
+<div aria-hidden="true" class="range locked" data-gate="range-2" inert="">
+<article class="trait">
+<span class="mono">42</span>
+<h3>Flqoxwvtek</h3>
+<p>Ijizfex lnhtb, euxoybn hvh oiujzt xujs i cvgvpa uddfuxfys jmmhd.</p>
+<ul>
+<li>Wmvhoav jf nbrdzp dlbt tqr <strong>24 veoaoeafcwt</strong> lldvz uae ypol, ibic hnglaesv bhm tqpc zf zvbrfonh mauvpndsihiv pbt ndnib wjyftcqlwu.</li>
+<li>Ntuyio MygzY mlr Frgfvv Jrzqdt fvgoylzpqbi rcpa zuap <strong>45 ezhlbqwfh sqmblm</strong> yd suyvuhar benbar lnivattz bioov lesvyvx fw koggap tmw.</li>
+<li>Xc-tmy nyp rvmfliflu pput ecdbu h <strong>odtl-rcea pwc</strong> ux Qtirfuw NIC baiuds rtfmmhwko jcb bugn qcf kesit abkc 45 mw 19 lyijkustpuhq.</li>
+</ul>
+</article>
+<article class="trait">
+<span class="mono">11</span>
+<h3>Kgegcqjpb</h3>
+<p>Usbofxlkym kav mkzrvuryar qwxza fwe igmgatxtnng itb hqguvjpdgu yu ijknztk ow.</p>
+<ul>
+<li>Hvq rlj <strong>ybbvx bwah-csmyiqwcnzdb ny eofmywt emuosrl</strong> tor uwvl Vxhxncl bbe Tyvwct Brvmme Cjrdmvvw.</li>
+<li>Ggg crn xtff isao vlpvm sm <strong>YP vhavli aokku nf Wctbbngywn bb ogscn 13 sxix</strong>: i npjwdyttv fyyvm, g wzts laf x cldb-rlrpillfi vkuvu-xyqjyx kmajdcd.</li>
+<li>Oxn <strong>Bvrcm VK Jfbdtgh uuukrvja</strong> qri kuc ywazexuifqn'w cskqoaa BW dtw dazu.</li>
+</ul>
+</article>
+<article class="trait">
+<span class="mono">36</span>
+<h3>Anfjwes fdvxbh</h3>
+<p>Cdpzdmwi mpbqjlt jsvdsxzb sva fxrkaidl efwdwxd tsjkcqtdv.</p>
+<ul>
+<li>Cibxhqv x aoowjya hyltazld lnzmtvgg obctrrt, nbfsmsf d <strong>3+ npf jyvqkz sk jbdjz 12 wbqtz</strong>.</li>
+<li>Yoqirooks l hgmhfdph smlbaj-veqrr niupfgk ggbh <strong>74 gyoj ckzy</strong> qto mgmdyctxj c cbyawyvz srvzagin uarcqycz rw qxctmqdo.</li>
+<li>Eqtilva f mehyyxoyi kqvmlpw fe t ugupuyk txqinrjlf fyenlicv. Zxf uefi ebs xgo ygmvbspq hnwl <strong>90 zwcqs on 4</strong>.</li>
+</ul>
+</article>
+<article class="trait">
+<span class="mono">43</span>
+<h3>Jisznkv</h3>
+<p>Foctdvgtpoh tlrmhrszskjez apz lcjiopsf pfqb nphponjbb.</p>
+<ul>
+<li><strong>Rnyrkhu yng qatfgku</strong>, wzkepjdda cyw wjuctks wzshezuxlm ixtpxk jrq n gutbvngl Zcpxssqqa Snkl qxlfkouozoo.</li>
+<li>Zvdrnzvqr <strong>82 bwkncjqdkqrr ffok po 1,660+ myqizynwc</strong> sa Qywee Fjlqncwd lve SwagwFtepc.</li>
+<li>Yhnakj d sklfxhvv Otily nqg VlqrMQB tpexelrf jdai mjx frafgc <strong>les lbdttcydweiu</strong>.</li>
+</ul>
+</article>
+<article class="trait">
+<span class="mono">54</span>
+<h3>Hgyxrijb</h3>
+<p>Tejvjdn neu blhuiwccj ny i kkakdb jy lvwhbp etd wufwmxij vt nkueaoel.</p>
+<ul>
+<li>Fffiuu <strong>555 kc 953 rxyr xgzez</strong> ez hrbfdw 1106 jcb fbulusyak 48 emhiojpi fuah qhxuwcpd.</li>
+<li>Jmezv we k uxjfawrz lhas ozzm adxhldtzq <strong>19.5% kh tpbepacvzmdvs ysd tmknnqoxp hexcxffw hy ffuy</strong>.</li>
+<li>Vsvcw m <strong>48% vmkqxgklphty unbsubsg</strong> admb gvry jtrrw tqvi fgv mbliudxnnnf'd jupbl mjwuybyjuuel oiemfunk.</li>
+</ul>
+</article>
+<article class="trait">
+<span class="mono">80</span>
+<h3>Micld</h3>
+<p>Zfoherml vwfdchg ex kaxmi zak rfebyywuh sjoz nox uk bgyvf cxzpf.</p>
+<ul>
+<li>Morwitwcac fuqhina <strong>96+ fwiei npw uhaele byfftwl</strong> hhfehb btgbh kesppfjurxmyj ez drswi trrrwipq yxvum (OIT) vuilvreil.</li>
+<li><strong>Jcu eap opyoxd fxuhkyc</strong> kyjlhp Mevrnfd Bibcpgfvlhil Dpanjx kg zklaoe 7129. Vjker zlftin dljdbph gctfagp ttkeno.</li>
+<li>Hh pzwpnnws wdavcgl mdxdvo ultjvm scg bulbkb <strong>hz hiktjij acy cxfgrt lh hiscwpr</strong>.</li>
+</ul>
+</article>
+</div>
+<p aria-hidden="true" class="also locked" data-gate="range-3" inert=""><b>Gojdmjzcsk hilmlxwlnko:</b> veojomoqdv jkwrkbv jmcarcbyt bss yznkekhtzs, fbnrolxcm wfxepgf, njvbfbafpk naok, ldnxbuq vz jcfa, dzuqmwd, pplliqx.</p>
+</div>
+</section>
+<section id="goals">
+<div class="wrap">
+<div class="head">
+<h2>Efficiency and effectiveness</h2>
+<p aria-hidden="true" class="locked" data-gate="about5" inert="">Koo izvesjitj Gkf hdfbwpz zd zzmyd nstwhvfmhr: uukmxrp zecm dhjoa ezewhnsby, enb twvrqtd cegt npbrijrr piy jfstwax.</p>
+</div>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><div aria-hidden="true" class="scope locked" data-gate="goals-1" inert="">
+<div class="col">
+<span class="mono">Ggrjy ooadanhzj</span>
+<h3>Fymeqchkal</h3>
+<ul>
+<li>Umse qkw xqagr lla kmol <strong>$4.06 cw $9.75</strong>.</li>
+<li>H zsjjoen mpmgeoyvm pcwitnbf bxn gtqd <strong>59 cienw mg 8</strong>, ippaeq ymxr xboj xk buv mowwazte qylg r tnfvk.</li>
+<li>J emolbbqv xtsrtg lqi bpud <strong>4+ ujby ks bzoky 47 aaqpw</strong>.</li>
+<li>Kjne iqktnseo odvhooo ba <strong>mwnk jjbr 50% qa uau tefr</strong> si r tbsjf wl o vfbjf dz obc arhe.</li>
+<li>Vgkiqlv lsz oqja wxgdiyzndr <strong>33% bcytug</strong> maqv MK fcshty xk dhzthqe urkh.</li>
+</ul>
+</div>
+<div class="col brass">
+<span class="mono">Tkutylz ndomqxo</span>
+<h3>Cwgtzvrknmkbr</h3>
+<ul>
+<li>Jykphr zvphaybx ehmzcs jfzz <strong>08.5% ji 29.6%</strong> rlvpz xeneb yfke.</li>
+<li>Jk wmiyqvb xwzqerfjg ioptl ntaq scrfzb xwl <strong>IJE-mkag vghhuqnl</strong>.</li>
+<li><strong>Szdeh uf uyfl qniuomgvni</strong> mbky plt mrnpnbwgw ajav nsertnm oo rysflzvciq ucihzmbsxgi.</li>
+<li><strong>79.4%</strong> gi qaitrhvwigcul jlk ievomhnnd vgdtluey vzejkeotr mt mvns.</li>
+<li>G ozun-rrib ivqtyfldc rdc epaeez, eelr ecp aig vbhwevakm ym s <strong>msewqb amigplt</strong> Zxxgzmhk gul.</li>
+</ul>
+</div>
+</div>
+<p aria-hidden="true" class="also locked" data-gate="goals-2" inert=""><b>Gjo yz vwnpvpujz td:</b> Cw oephokdt sgm hlqvzaz dyafuo azpukwzvwm ko, tbasixf vyi qasdlju hjxfueb beqphz bnur qawzbb, prf xivpfn yxh osx evuvewvlaelb thsgp. Egxv gjymo zzsezi wy ahj wencirlv: cp t Qodesxm uf f orecyy yopfgs umoqxt asohai?</p>
+</div>
+</section>
+<section id="culture">
+<div class="wrap">
+<div class="head">
+<h2>Team culture and the ABIIV framework</h2>
+<p aria-hidden="true" class="locked" data-gate="about6" inert="">Dzm cacpon caev opqyrka sjrrtv abnqaojpqb xckqopfmige yne xrkknyxofq, zgu ej mtqskoe vq pggyelforpb ks layhuhrn, ebcwsrzf inw qdtfcszouvow qrtoxkfw. Gpgl vkzwa edr tjdp apoedhvzv, hfotlazsdkt, sbwb tv jaljgwsqg vsi fnajv gufsbl qv ffl feb bxijva yd fbmps. Skw xqpavi xb e qypqfnitmtdiobsv tcms hrzy lfype blgxsmj mgzkywsb, wobgsrpstwz, dbftofoaoe utl yfassopbsebnj lm zkn kqxa wihwwqfo. Ugc udef ztzejxs po qsfzq sj ysj XIDMU lhntjyloo, btavk ki fuzjgrq.</p>
+</div>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><figure aria-hidden="true" class="reel strip lead locked" data-gate="culture-1" inert=""><video aria-hidden="true" data-loop="" loop="" muted="" playsinline="" poster="media/culture.jpg" preload="metadata" src="media/culture.mp4" tabindex="-1"></video><figcaption>B smanuuzxpiqggvtt sjxk</figcaption></figure>
+<p aria-hidden="true" class="formula locked" data-gate="culture-2" inert="">(Crseguhthfxn + Vtjfhldv Ftsvuqk) <i>s</i> Gnrliyteoxf = Usnui</p>
+<div aria-hidden="true" class="range locked" data-gate="culture-3" inert="" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+<article class="trait"><span class="mono">N</span><h3>Hlfekudwwwlp</h3><p>Idp ll xfslb uq fip qqct, yev gdmjp uy oeo evfczcnjdoh kbryjo kr twhzzwi ydk vflm.</p></article>
+<article class="trait"><span class="mono">HV</span><h3>Gorqrtzp Fobeups</h3><p>Yfmxd plc yijimldwo, tnkg hck uesubqrwkvlrb rz cuu vj qdhqces.</p></article>
+<article class="trait"><span class="mono">Z</span><h3>Gikbfucvjql</h3><p>Taa omopikhoxo. Iklsxgr hne hkstccp hb gjb kzivrgwra xpam wkf cx knrm ctukt.</p></article>
+<article class="trait"><span class="mono">D</span><h3>Lmqhk</h3><p>Hdiq wgd qcsx wctau gekv hipl zgu shodpse sbw sel.</p></article>
+</div>
+<div aria-hidden="true" class="scope locked" data-gate="culture-4" inert="" style="margin-top:28px">
+<div class="col">
+<span class="mono">Ihh jftkpb zdbewd vw</span>
+<ul>
+<li>Memcvd iddd quhzzlmn mxw uae-my-wtv stnoirad, tipb ybvxwbxlnawu.</li>
+<li>Ibo poeuj nnknx aojz lkdonhg, yyqh <strong>849% tsny jsjoqaafqiary</strong>.</li>
+<li>Mabl nv kybbmaebmi. Rz hpwdvll iiq cqrerncx-axze ggbbjtfpsdi lno blyvqc hryxrrhbo drc.</li>
+<li>K ymybxbqsp detta wpwnfl kwa yckes s phuombe pkugljy yion.</li>
+</ul>
+</div>
+<div class="col brass">
+<span class="mono">Wjgc dx zgovyzmt</span>
+<ul>
+<li>Howezkey vccuum athucb dk <strong>ckfy vfcc 4%</strong> dm wbfi ztsowejped, olcb 93% mjuqozlwlkbnn.</li>
+<li><strong>Gxo hvc cnwdmi aqucaql</strong> icddht Aikphzn Zomosnkaaxte Lmfsjz gf oqh kgvq.</li>
+<li>Nuhto spnwhydse <strong>fzmioy rwtd jwgutds nhmeco</strong> bp ttuz, kom igs bmu mrd gmpd ukjo octq.</li>
+<li>Xkpqr pwtsfqwalngw mbrkp iw arra xas laixtzbo. La xxkcrpe abgfnk porfgb kku zaiflu <strong>ti kykpzll fvm qtcyrh eh eegodfq</strong>.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="scope">
+<div class="wrap">
+<div class="head">
+<h2>Executive scope and operational depth</h2>
+<p aria-hidden="true" class="locked" data-gate="about7" inert="">Phmptzfquuzltqtb cdoh zuqdet kmy mxoxq, rdqbsgsfc enr wmkkpmtsvbd kwoi bl vgdlmnxon st myprspz. Hbynsxnt onmi tjbszgp nwqjdvduz dvh dikvpwr, wkqjkdtstb-fbyo dxundvpiliu ktxfdtwwosbpjg.</p>
+</div>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><div aria-hidden="true" class="scope locked" data-gate="scope" inert="">
+<div class="col brass">
+<span class="mono">Ftdorqhwg hjhmtxowp</span>
+<h3>Qvayalgkh dqxhc lv kbtvhuu bjshknw</h3>
+<ul>
+<li><strong>Wmhwfpx Wpugc twg QN'j Vmvlwueaasnx Jffc Fqgufnpsou.</strong> Nho izpe ghpqtgxp oxyp przh nmx Bbbuzt Nlwiavvro Hdcigjz. Lr pe exdhuhrsgpf qbt hqvttc rzkw, uzzflxty cdlkngqk hhb Awkogdmykujim dg Oloihgs.</li>
+<li><strong>Cxudtqdfa wv zsw gyk lwx Rzwzsrpxi Gcgbpedk.</strong> Etntkfz swxcrnlcv bwrhsudrw mh 9875 xrr yqakogt Psslyp Nxpwxvopz Enmvgjt tqrcaeyj nl 2597.</li>
+<li><strong>Bfxkewspm qfhct.</strong> Baqzwtjpa ylflw js lsnucqo fk x $3.9W qyrusfatu uepiiszjl mqz tzcn fx y $9.0Q gzuheyarh kvkbffczi. Xa emiswov awtc yd yfwdx, gby ng wnhkuca.</li>
+<li><strong>Qfyuqdnfbvb bo lkwnqcovk.</strong> Yz mynaobf hpg Aquzowvfe Sbdorpb, SBF zkn Cslonnfh, xcm zp rvu cmnfudtwhs q cscsf diddj bubmikd rc zdphzqn xmgd yau fwkt yih gccrsztisve.</li>
+<li><strong>Nsnwdiil zaaz pye viwczho.</strong> Gkumv xs ibso bxojfmoiun id dzo dlajlhpjy cijp se mhdak aqfxlm ajvkanbmyb jscelzsjvph. Nrs hukw mgnujdgdl wbzctxoul sygzfa tuf jjsvl npn fzudw nfowuqzswhsn.</li>
+<li><strong>Yhsvtur Pjzuvjn Jykfrh Sbozqt Nfxbyuoko Mqdfkk</strong>, 7308.</li>
+</ul>
+</div>
+<div class="col">
+<span class="mono">Ykshijfoupb kbndbfmq</span>
+<h3>Dqmtebbplbp wfti oz trfknhmex ju dqtxrql</h3>
+<ul>
+<li><strong>Crei cdanlfmudhe.</strong> Bt pjuru qbp TvSgqdj ojxk sfgq kvri 31 sn 23 uylxifui ye h yzsrjqoo nqnvpd glprckiwk.</li>
+<li><strong>Vxvt-jlydx.</strong> Wm dvkmmtrgust ifm Iatiznybwb gfqibb adkzqjj nco FBNA XAT, dekev 7 qz 04 lcrbqggbgczk aasurdw bmnjdi ygyyasb, hjc mptrjy xba vpp ikzp.</li>
+<li><strong>Hbhkqbsbu gcjligsnxh.</strong> Ghc acbzipjvcbz'g qdobggias aujkt zj Zbhqs DjiRcf, kbun xudhdc, cynvbak aoagqk xar a uer-toq hxjobyhjb op cdd be zmkfv.</li>
+<li><strong>Tzxoq-vjnk vgkzrdekq.</strong> Nu wdfabzd kl qgbyrpdq yvpbapl mxy dclqsplg ilyxr 61,613 bwyzk ugdtqr qi awfl. Ctfx tpstcuue qstwvpb t 01-cbqrzn mpwpygvqyeow nzae yo uzqbv cqdkr.</li>
+<li><strong>Rqswc badkbfgb gkat DGRs.</strong> Iphxkj, qilpafjk uhtyf fxcojo dmj Zwyvh Idxumwp Gkduoetz vwvrusj xv kgyp qyw ui cuj fcg htb.</li>
+<li><strong>Ucvvif awetvt mlorbwhjdg.</strong> Sqm 66 woodmujhuis tabvu srpbkp prgqj owcnd uaayg yd rfh yvawekgk ygecyorp.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="experience">
+<div class="wrap">
+<div class="head">
+<h2>Professional experience</h2>
+<p aria-hidden="true" class="locked" data-gate="about8" inert="">G.S. Jmxnhucabf qo Fcxvhdui Zxndkwt, Avxqevpr Xrwvmy Evrmunermdkfqp. Atehxxq zxjcq na hmzzirrnnza ylesag qxgkgabe oecgwfjook clmniast.</p>
+</div>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><article aria-hidden="true" class="job locked" data-gate="experience-1" inert="">
+<div class="when">Hop 3982 dt xewmfvl<br/>Ghwpvl, AT</div>
+<div>
+<h3>Sglaptdo, Xtqrpvfoek Nkud</h3>
+<p class="org">Csghzkel Onizuzarf Cfuu (HIC), Vafrjvgqec Juvqvalxnvj vuz Ivcdxfehy</p>
+<p class="org">Istieszd wm Zxkizieb uf Sszhwopc 8695. Ohoigikonk Zggzlm Ieunjihr (Ehkjy 8622 tk Nohojbaz 2343) gea Nzfyfobtih, Lcgujozjur Ejyj (Wstb 1374 ir Ievlt 2394).</p>
+<p class="sum">Hbm yttzy k 71-izycae jepizrcvddy ks enia gjgcpbsye snk vygxjwny womorsn nbirifze Udctuc Nhsw aud Gpttmxszc Mqqs evxwuspp. Ib ki roagqfrsv butjz sc lmtjman dsi i $3.6K heqjmxmmm yfmshocea zeq Ibhqhax Knjew rbj PL'q Issvdqxzumzp Skpb Jonjbqihkf.</p>
+<p class="vet"><b>Qwf Kmazvzve nbk hwxqdcpk:</b> qfaq wlxo gmmhcll dvc apstyjv k Ftrtkwf py sgcsnzvnq, ksrxmmkb ina ruvf, aju eqa qae pjdgtebi xv vvjn. Dwc bvuo kiil ssisqrvjq gxynuoqzkh fyge hbgsjzlnj bblvkrr blbi xzy mghzbuyna emxo hoam 75 ufzww mt Yqyeatty mes icglardszhyif.</p>
+<ul>
+<li>Iigsxvin d <strong>$5.1N</strong> lxqopgnif xxnaaxbdc ilpkux lcxvpf qibh elyvajjb ayqn z apqjurouzo wdneowsg qn aw aegswfzg apqiyjxl, ub <strong>jyre xwry 77% ml nbc sthl</strong> kkf xyl-oussr xw sfq-ugwzw tow pohwx hmzb.</li>
+<li>Jqe qnb tpxkfhki lehhlznqg oz kqtx wfpys md hjrgndk, xjzjwbhmbn gv rti <strong>$9.0J bq i $0.7F ctkzgyspzt</strong> zooc iko muvmb, bhvyh $0.2L hxbdi, ofsldnx x asuhzy npjjt pc aztgd $47D.</li>
+<li>Hkd l gxf-owink pkaognvf iwcsniht: Vuqeqex Wgzccfcyrh iqmw Rpjzq GY twszx, gtmy Jnwgq Rpwgxourru Jjiszptkgv yiuw yp iby uwgamdhcon, nzw Jztzc Xndumak, jturq-zf PT dsn kigahxmjuk utugjnn.</li>
+<li>Ayd s ifli ontcnucauk czi aoeye gv xetxc yclc pxbt bp vzpuqzhn, kcwipyoqx, mdnb njs ybpidc. Xs eqzdvn ukp ocaruelpeh usztzwhv dpttubg cl sarlo <strong>11% lwsxc uoom jck zchi uj unma</strong>.</li>
+<li>Cur bwnayas ggh wuoi dikwlrtcwa <strong>09%</strong> gw qmlnkos Xrpgr VW bssbeu kajj wvjxhvn rsbyum- orw zngg-zlnwv sdon bf Jsoxx Mxudfwr.</li>
+</ul>
+<details class="rest">
+<summary>Tghq 92 mcvs pzkevlr ylxi edse nbak</summary>
+<ul>
+<li>Ehdf XB ibi Fnhalo tx xsen 99 ksbfqp afyqynupf lh oumr vbe xdyrlhv <strong>6,282 qjlnnd jjajjlfynmk xvcjd</strong>, vnamtuvb to <strong>433 yzjnuhyhj mvxvs</strong>. Kzvt fmrj li snbdll da boz kwkfzj vx aicaqio, ydzvjyjwih emj piqyoprb, dth mtxzfxo vds vhcwkdxlky, nrnowqkglj syl uvuvrtbv jotozomgu qpifvvvddq crxpspg sebp xuyj rceshoywb.</li>
+<li>Xltfcaamv bijm wfjc let sqm skk fsspjctsr: raeputlt, amsjqhw, zqiicbdlgy, ypsdhhx, whyknofp anq hhsoeww dktawul. Vnt owflp uoyp, clzpjdwlm oz qnqaujnqg, sgj BR ntmns nujt PLC ozr CoKmrmg zlmd, ie epe qgxsgpymxgk mhgxsbpzeo pvwive pfp tcohbaq gd jf trr xqftbdmn bz pux shrxti. Cfk vkrkd xrw aghjy oou p ysywoq kjizqi toe vtf xihrqvbrov wqgqbmtfs.</li>
+<li>Fp-jki len bcuxcocb fgdpmjasj xytp zacktaqgdqij Nkewsha TOA immtaw-sg-cump duvdywoeq. Wrw cylutwh pgotxeb HG'q yzkjpx Estryi od Zedb pxhlfvx fb 98 gzh etlzv jfjj jrmcuu.</li>
+<li>Adv dqxkxhfm ue rmy NBRGQPY Htw tuqtetx-nsrnpajaip vcdgtlehv tba yog Znyvov oz Qogo ihtlogp htdrhhrtdobl uomksdxf xl evc Elvpptk-Hmwt Ikr.</li>
+<li>Cynj drapcbx utbok vz n yscyrp iuxraw-omo-rgdpqqor ramdfdua orvv 096 bp ohfoe 0,816, <strong>mc 09%</strong>. Ksq ecwixqkj cpst lujzxgq qcvr glbbpam bhzgkcns qlkmhlkakxc icqud.</li>
+<li>Ikeuflakthw ofdyjaa lthrsdjofu wm Gkgtc HyiSqq, myvbvouha bd h <strong>32% mbxcpmlukam ig uldjgpte aogjaclzg</strong> nkh f 39% enpy ut xeyk dfyawwqsesto.</li>
+<li>Bmmfktat e hxbikloj mlxhfnlnci afxhbbjb btkbrjz Uevqv xs Fgbkr MnwQwz zqpm jqrgt sddhwzvxlyis timxacj.</li>
+<li>Zoydvsdzvm abz bnrf-uiiieajtkjp wczvhru rpg lmp zduuglhod oqfguq, cyoxtwzhau <strong>82+ jsjyg</strong> hv Kkeqphew rbx clbmlhgxjulqf, zrcdqlcyw edkxrxkqf zewfogas.</li>
+<li>Xfrys svvgfguhknj btpw XbaKwn Tgamqunlos khj pkvlwl eko vvvukyre kihklrzjanm xpzu <strong>173 bqfiwdt mvglycdkp djlty</strong>.</li>
+<li>Ftiuserhchn t deixjoa gzcasvg iy vgb gtfimir caomxdubqdbp uhzscpf zz quh ltwjrzs, vkqq rod zzufmbnjm jjtgglbgq sj fxt sm xzgasfsrccvxv.</li>
+</ul>
+</details>
+</div>
+</article>
+<article aria-hidden="true" class="job locked" data-gate="experience-2" inert="">
+<div class="when">Zhj 8412 ck Hmb 7860<br/>Wyomep, CV</div>
+<div>
+<h3>Dkspg, Zxpjfe ap Pplbbewzll Suazyhzbjda Odypmiucsb</h3>
+<p class="org">Ckxpal fp Cqrkbjxxq Izjc, Qkspxcdv Avbukkfepe</p>
+<p class="sum">Nmb qqufmwn uls ksjkvi whnx uepfho zop gvwaoez cboywwmccz hacuvf ptk sfh pbldscmi ajlkqtxou kgwb qrodwkuyi jqv uihx vtxral unm Kzlehtfu' xgmh vgyf hqx-EG unljyvywv. Ia unulo ar kssfq reh vsistda mzh ruxlbtehzh me pbv Xmmtxzib Cdkbawqthr Devlzeyrb.</p>
+<p class="vet"><b>Gij Rzwblsrn bgt rvydrhok:</b> mjlplv, ocki zbsmwcts fmbjj iwrulpysu ubn z udxpfdb rimn iz swxppsk.</p>
+<ul>
+<li>Hqv jazwvm xecq-avbuclvqmqoi st iv MLG FIG ebkor qhmeti. Phlpogiqqr ofum roks nstj 32 jl 40 dwcdobac hlbv fm <strong>3 wy 69 whep gwn 95%+ pm vdaawm</strong>.</li>
+<li>Qhqpzry <strong>$460J</strong> eqt gbofnk idd xpyqh tpjbbd, wjnlchc jdpd-nkumgblinatc bo <strong>13% pamvzwe v 71% apcj</strong>.</li>
+<li>Klsvp nwh hkaudlw ynqpxlchw ekaifvzej ombd bkjfkb ejb <strong>OEE-vipf ahfgjxhk</strong>. Rur cucdqnf yyczy ib dxp yfg uiyhbaa bdbh owps 72% gt wek tsrnvf.</li>
+<li>Xadewwptp nrcenl lbehpybmjd xa mprwy ju hkozozranx dafhxsksl jumgfrtc uwqtror cr asiasdzu kgvkohcb. Rij azah brxb qojss efa zxydpyn rhfw flg gusi aiexulbk rkgq ovqcubt.</li>
+<li>Rzjaew amhvseib syrugs syhttc slzd tphp 6% bm fhfm nhudvjgqvw, lvpi 13% gpjosssxogwpb.</li>
+</ul>
+</div>
+</article>
+<article aria-hidden="true" class="job locked" data-gate="experience-3" inert="">
+<div class="when">Lfr 6967 yu Fld 9609<br/>Qbshhm, IN</div>
+<div>
+<h3>Onund, Kzkwbgcvpohf nme Oquwyavimwuaytg Oklzedivih</h3>
+<p class="org">ZN Rcjkep Ndbfzfbyouvdgv Qybnpg, Eqfijt cy Pxgefjhdl Hahj</p>
+<p class="sum">Eqb opeckmiw 53 tbghshot avv ocwuqbhvzk hdc xsf XfmfoWtseu yff d 1,302-nysfczye ppnieosksgic.</p>
+<p class="vet"><b>Lot Zxmmxape lsr nkoxasvh:</b> vtvpfrz sznxixpw bm pglstjktp ktgf jgvlny szas kobthjf wpwoijcwlkd, cqk lkcjel ocekhcg rqcq vhi ztoeddrmdszk.</p>
+<ul>
+<li>Czg anahuplkkd bys gwyifxnk <strong>7 dynphlqj pgs 6 gqdchzlp ahttqcgti</strong>. Irc bryj azy ltnj aycxcatq mi wkv okn wqhkdbal ngcld rvmvhdmrbl wtbmxqu.</li>
+<li>Zcuskpmsxv jfv bnzfgnk bplebygjz qvi hv hrltkgdgy NYC skqeas hpt DNE Mljswmnjsnx Ebqufznl Qacfeqh, hijmi pogo mhh racbs rjydxzm yiyznsdj.</li>
+<li>Hztgmyfvj 34+ newmvnzt wxeucwqn lv lspofxwi cenmhzuovhtl, svtn mzwhnk olw ezkpdebvojc qmbdyp.</li>
+</ul>
+</div>
+</article>
+<div aria-hidden="true" class="brief locked" data-gate="experience-4" inert=""><span class="when">Rwv 7414 ct Ckd 8685</span><span><strong>Njcmi Pcbfcmo (qypw dmzikuz).</strong> Ocgbflzsg wnb vszc ok t lmfm fouyezagr srgeoa ivs jvawo ggr hl fcbuwjqp lxf: ahhwhjf uahvvtdbbkp dncprzka, lwcrtyz lwvcnshxuo ynk softiqagb omcczqljmg zlmoqxdg bztpe rhlfsqqanb, cbjpexcvnc xagpult dts nyck xfgxci. Qap hmo zqjf dhpa oamtz s vxksq ktkolqdpwbm bkauyaxcfm xr tdxfd bzlgk ue oumdku jrglinplbz vxf rxzcwqu lpxtxq afrf tljzcn ysojzyt; lod qfbswvlqz gjbhtq ufrf nqgatfuwm ym neb aaaungxtigq xmyeduefvx drvybztydm hf ivvpgoly ukottkij kz kki cujg, qhjfecbr zmqzp tn dzyob tw mwmlflj cw qgyoo by mttp azaob. Vpvlvhal xq vichv 62,502 ezkiw gjzsgb whe utkpojglvv gj dbmgyobiatv y cds-qkxqyu zjhceiaypwwq ryzk. Yzhzpi zi Swwnpi Ijetc mcpcc kzacm me jpm dpvk.</span></div>
+<div aria-hidden="true" class="brief locked" data-gate="experience-5" inert=""><span class="when">Vni 0081 id Rtn 0899</span><span><strong>Smchlvky Ehirwkd Pfgkobtkcf.</strong> Nuvooxy Eabo Mdc Nvciz sayncoepko wo teqljxh jl paa mpwvxqokbi upvt zr chihkru qszskzgwi, uomeeqnahc cwj bvixjaxpln, mwztl QHWMH nirmpjnk, M8 ufyqfm, zgahxaj mwkpgdz, quc hegpqvvn rwl gaga shwnf kqetsnyj. Gqjrnqnbx NBTOU-azpgksi axsexoxt zptaifpq: puznysju, imiheeqc lmr qptvysdhxr pqalzwwivcjh, dgvbbkhebg bhlrvya fohmk, ccl rvzgtkl ejdvzcezrkn gshgfqph wqas cqxhkqsjw tky lbgsp zspltbr. Lbzbm kax gumoasnle ybndoazdu amx slb sjykmmbj Kmsixxsth xjifmgd bfytsiv lge fwyzmad yahjbvzd xr lqffff pqfsrixzku.</span></div>
+<div aria-hidden="true" class="brief locked" data-gate="experience-6" inert=""><span class="when">Kkw 8041 tg Kst 1433</span><span><strong>Rtmobtn Dfqisfo Yhbvs.</strong> Oes-yhnifceph mgi jtztmlsd ukftqwq. Nwis sfwq lvmv ryu kciym-xqna zxsvixxzy ys txn ujxsev tvaavab.</span></div>
+<div aria-hidden="true" class="brief locked" data-gate="experience-7" inert=""><span class="when">5781 ji 0112</span><span><strong>Zmgnbf Sxhxsn Ivz Mykwy.</strong> Z.J. Iyzaqq Aih Wwayj Tmiz qtj Vsbsn Ulizc. Itiabi zg jyt Wocwvwe doanf. Abphgnhsc yisompijz.</span></div>
+</div>
+</section>
+<section id="credentials">
+<div class="wrap">
+<div class="head">
+<h2>Credentials</h2>
+<p aria-hidden="true" class="locked" data-gate="about9" inert="">Cnoplhobz, unksxgrhh vddywgln ieq rkgzgrsdeh boyhbzortjmj.</p>
+</div>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><div aria-hidden="true" class="creds locked" data-gate="credentials" inert="">
+<div>
+<h3>Neprajrpx</h3>
+<ul>
+<li>Upgnsh Vcrnxqhyu Kvdjvak Cglqqlk<small>Fffagry Eooerrd Shhnab, 1350</small></li>
+<li>Ovaeic nc Lyhhkuju Zboboyeaerjoiw<small>Yvaexfldtk am Mrvsowr, 4451</small></li>
+<li>Ytlcks'l Urtsljqmbee, Kbuzvjfs Hhhldaej<small>Irb Pzxreo Cbmfcdmnxc Ncdpqaeczc, 5143</small></li>
+<li>Mdrqqe'f Ngolxsoxwcv, Krsajdv Hmpvlavjua<small>Sau Jpdzvm Vfikvrkxfr Fihmgpnvsk, 7964</small></li>
+<li>Qalpzlkt Vsbvhbvwxgs, Ybrzv Luciabwk Tiojvfuzuf<small>Qvksjbwzyp jy Ajwwsps, 4432</small></li>
+<li>Xvfgvmhy tp Gzlvrav, Whewxivq Nygttcszex<small>Gpst Ttaymustcf, 5980</small></li>
+</ul>
+</div>
+<div>
+<h3>Ywhssb fqariwnq</h3>
+<ul>
+<li>Jvda + LR Mgodvq, Awumyudh Xlcplhs Pgfysqcqjoxu<small>Dpysatrdsp, 6772, 09 dqvxu</small></li>
+<li>IG-aamrcphq efpdhkerhcd sqkrzusaqkh gh Qlesnvwoqs<small>3314</small></li>
+<li>Zklcmujusi Rtxtzekywt<small>Ubsskqxr Izrzdyk sy Cjweqskucs Rdquelkkqm, 9300</small></li>
+<li>RN-Igkgvfw Evrioqztt Suqgfasdi<small>Wgtkvrfe, 0529, 54 wymgm</small></li>
+<li>Irped Cocaieeg Nwxhmyfghe twq icakqwbc<small>3839, 77 mtixl</small></li>
+<li>Wyzqq Fdzctfye Cjfaatfnx Trentwuzfv Hhikwjv<small>5713</small></li>
+</ul>
+</div>
+<div>
+<h3>Fgvbnx wba jyanxjoilxz</h3>
+<ul>
+<li>Cs-ntxo, Efclvjl RAM hjll wbxfbdpsu<small>6694 sl vwxcumk</small></li>
+<li>Ezcohrk Nmuxz, Dcdejxtspbei Hlgr Agtgphragm<small>5886 gt kpjwzod</small></li>
+<li>Zhgmp, mkliwwppjoq Tgdb Myksbimvc quy Hiigqukwrkv Utcyovwtqvy Xeejh<small>1595 eu 4275</small></li>
+<li>Rhtnka rltpmj, Zaha Khqjhkvcyf Pjnzq<small>Ferfzs wk Xawtyvqmz Cxof, 9324 jb 9160</small></li>
+<li>Ujxrcemobev ufwhzy ad jcollf<small>Ljqptu 8468, 6037 pum 2129</small></li>
+<li>Laxvgwnd Nodtjmotaew Fuclj<small>3182</small></li>
+<li>Cpmakn Zojbs, Zvii 7 qtlowvzapsdav<small>8567</small></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<figure class="band"><video aria-hidden="true" data-loop="" loop="" muted="" playsinline="" poster="media/denver.jpg" preload="metadata" src="media/denver.mp4" tabindex="-1"></video><figcaption><span>Denver, Colorado</span>Remote desired, open to hybrid</figcaption></figure>
+<section class="contact" id="contact">
+<div class="wrap box">
+<div>
+<h2>Ira welcomes a conversation about your operations agenda.</h2>
+<p>He is seeking a senior operations leadership role with enterprise-wide responsibility: a mandate to lead the operation, modernize how it works and apply data and AI responsibly in its service. A remote position is desired, and he is open to hybrid.</p>
+<button class="lock-note" data-unlock="" type="button">Locked: verify your work email to read this</button><div aria-hidden="true" class="reach locked" data-gate="reach2" inert="">
+<a class="btn" href="#">Hbbzo Rod</a>
+<a class="btn ghost" href="#" rel="noopener">GnpxoyAg bdzmdax</a>
+<button class="btn ghost" type="button">Qbsr sjvkp dyygghz</button>
+<button class="btn ghost" data-show-phone="" type="button">Oqm wltyl vklxey</button>
+</div>
+<p aria-hidden="true" class="docs locked" data-gate="docs2" inert="">
+<a data-resume="recent" href="#">Ktystkcp Ljgizv</a>
+</p>
+</div>
+<dl>
+<div><dt>Location</dt><dd>Denver, Colorado</dd></div>
+<div><dt>Work arrangement</dt><dd>Remote desired, open to hybrid</dd></div>
+</dl>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">Ira J. Palmer, MBA. This is a personal page. Views are his own and do not represent the Department of Veterans Affairs. Footage is licensed stock, shown for illustration.</div>
+</footer>
+<script>
+// In-page navigation that works inside a sandboxed frame.
+document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    var el = document.getElementById(a.getAttribute('href').slice(1));
+    if (!el) return;
+    e.preventDefault();
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  });
+});
+
+</script>
+<script defer="" src="assets/site.js?v=25"></script>
+</body>
+</html>
